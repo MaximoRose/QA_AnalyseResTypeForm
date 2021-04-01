@@ -7,10 +7,16 @@ import requests # pip install request // si necessaire
 import json
 import pandas as pd
 
-# Elimine les options qui n'ont jamais ete selectionnees
+
+###############################################################################################################################
+# Fonction permettant de nettoyer les resultats pour des graphs un peu plus agreable
+# + Quelques fonctions de traitement des dataset en fonction de parametre de formulaires
+###############################################################################################################################
+
+# Elimine les options qui n'ont jamais ete selectionnees pour dropdowns et autre signe choices
 # label est la liste des options possibles pour une questions
 # Values correspond au dataframe associe
-def clean_lists(labels = [], values = []) :
+def clean_lists_for_cheesepie(labels = [], values = []) :
     clean_labels = []
     clean_values = []
     if len(labels) != len(values) :
@@ -24,7 +30,28 @@ def clean_lists(labels = [], values = []) :
                 clean_values.append(values[i].shape[0])
     return clean_labels, clean_values
 
-def dropdown_subresults(main_dtf=[], l_options = [], q_name='') :
+
+# Elimine les options qui n'ont jamais ete selectionnees pour multiple choices
+# label est la liste des options possibles pour une questions
+# Values correspond au dataframe associe
+# nnbreps est le nombre de repondants du questionnaire, ou la totalite sur laquelle on veut faire les taux
+def clean_lists_multiplechoices_histogramme_rate(labels = [], values = [], nbreps = 1) :
+    clean_labels = []
+    clean_values = []
+    if len(labels) != len(values) :
+        print('labels and values are not the same size')
+    elif len(labels) == 0 :
+        print('no results found')
+    else :
+        for i in range(len(labels)) :
+            clean_labels.append(labels[i])
+            clean_values.append(values[i].shape[0])
+    return clean_labels, clean_values
+
+
+# Recupere les dataframes associe a chaque valeur possible d'une colonne de sinngle choice
+# get subresults of dataframe based on single columns values
+def df_singlecolumn_subresults(main_dtf=[], l_options = [], q_name='') :
     labels = []
     dtfs = []
     for i in range(len(l_options)) :
@@ -34,6 +61,12 @@ def dropdown_subresults(main_dtf=[], l_options = [], q_name='') :
     return labels, dtfs
 
 
+
+###############################################################################################################################
+# Class tf_struct is more that a struct
+# It gives all the functions needed to cross-analyze form structure (given by API) and form results (dropped as CSV)
+###############################################################################################################################
+
 class tf_struct :
 
     def __init__(self, formid=''):
@@ -41,6 +74,7 @@ class tf_struct :
         self.form_structure = None
         self.form_fields = None
         self.form_results = None
+
 
     # Call typeform API to get Form's structure
     def get_form_structure (self):
@@ -53,6 +87,7 @@ class tf_struct :
             self.form_structure = data
         return data
 
+
     # Retourne le titre du formulaire
     def get_title(self) :
         try :
@@ -60,6 +95,7 @@ class tf_struct :
         except  KeyError :
             print('no title found')
         return formtitle
+
 
     # Retourne l'ensemble des questions
     def get_fields(self) :
@@ -70,6 +106,7 @@ class tf_struct :
             print('no fields found in Form')
         return formfields
 
+
     # Retourne les questions du formulaire
     def get_form_responses(self, respfolder = "./responses/") :
         filename = respfolder + 'res_' + self.formid+'.csv'
@@ -77,9 +114,13 @@ class tf_struct :
         self.form_results = dt_GP
         return dt_GP
 
+
+    # Retourne le nombre de reponses au questionnaire
     def get_nb_responses(self) :
         nb_resp = self.form_results.shape[0]
         return nb_resp
+
+
 
     # Retourne les groupes trouves dans le formulaire
     def get_groups(self) :
@@ -97,12 +138,14 @@ class tf_struct :
                 print('Following element was not grouped : '+fields[i])
         return formgroups
 
+
+
     # Retourne les options et les resultats par options pour une questions donnee dans un groupe donne
     def get_results(self, gidx=-1, qid='') :
         qidx_ing = 0
         if qid == '' :
-            return
             print('Please give question id.')
+            return
         if gidx == -1 :
             print('Please give group idex.')
             return
@@ -112,23 +155,89 @@ class tf_struct :
                 if group_questions[i]['id'] == qid :
                     qidx_ing = i
                     qtitle = group_questions[i]['title']
-                    print(qtitle)
+                    # print(qtitle)
                     qtype = group_questions[i]['type']
-                    print(qtype)
+                    # print(qtype)
                     if qtype == 'dropdown' :
                         qoptions = self._get_dp_options(gidx=gidx, qid=qid, qidx=qidx_ing)
                         qvalues = self._get_dp_values (qname=qtitle, qlabels=qoptions)
                     elif qtype == 'yes_no' :
                         qoptions = ['oui', 'non']
                         qvalues = self._get_yn_values(qname=qtitle)
-                    elif qtype == 'picture_choice' :
+                    elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
+                        multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
                         qoptions = self._get_pc_ou_mc_options(gidx=gidx, qid=qid, qidx=qidx_ing)
-                        qvalues = self._get_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
-                    elif qtype == 'multiple_choice' :
-                        qoptions = self._get_pc_ou_mc_options(gidx=gidx, qid=qid, qidx=qidx_ing)
-                        qvalues = self._get_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
+                        if not multiple_c :
+                            qvalues = self._get_single_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
+                        else :
+                            qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
+
+                    break
     
         return qtitle, qoptions, qvalues
+
+
+    
+
+
+
+    # Retoune le type d'une question dans un groupe donne avec un identifiant passe en argument
+    def get_qtype(self, gidx=-1, qid='') :
+        qidx_ing = 0
+        qtype = ''
+        if qid == '' :
+            print('Please give question id.')
+            return
+        if gidx == -1 :
+            print('Please give group idex.')
+            return
+        else :
+            group_questions = self.form_fields[gidx]['properties']['fields']
+            for i in range(len(group_questions)) :
+                if group_questions[i]['id'] == qid :
+                    qidx_ing = i
+                    qtype = group_questions[i]['type']
+                    break
+        
+        return qtype
+    
+
+
+    # Retourne le dataframe des repondant pour une question donnee et une reponse attendue
+    def get_question_specific_resp_dtf(self, gidx=-1, qid='', label ='', isnot = False) :
+        qidx_ing = 0
+        if qid == '' :
+            print('Please give question id.')
+            return
+        if gidx == -1 :
+            print('Please give group idex.')
+            return
+        else :
+            group_questions = self.form_fields[gidx]['properties']['fields']
+            for i in range(len(group_questions)) :
+                if group_questions[i]['id'] == qid :
+                    qidx_ing = i
+                    qtitle = group_questions[i]['title']
+                    # print(qtitle)
+                    qtype = group_questions[i]['type']
+                    # print(qtype)
+                    if qtype in ['dropdown', 'yes_no'] :
+                        qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
+                    elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
+                        multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
+                        if not multiple_c :
+                            qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
+                        else :
+                            qvalues = self._get_df_multiplechoice_qvalue (rlabel=label, isnot=isnot)
+                            return
+                    break
+
+        return qvalues
+
+
+    #-------------------------------------------------
+    # CLASS PROPRIETARY METHODS
+    #-------------------------------------------------
 
 
     # get dropdown options
@@ -140,6 +249,8 @@ class tf_struct :
             # print(choices[j]["label"])
             labels.append(choices[j]["label"])
         return labels
+
+
 
     # get dropdown values
     # returns number of hit for each label of dropdown
@@ -163,12 +274,16 @@ class tf_struct :
         return dp_values
 
 
+
+
+    #-----------------------------------------------------------------
+    # PICTURE CHOICES  or MULTIPLE CHOICES - return possible options
     # get picture_choice options
     # returns list of label options
+    # Integre le nom "Other.x" de la colonne associee dans le CSV
     def _get_pc_ou_mc_options(self, gidx=-1, qid='', qidx=-1) :
         choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['choices']
         other_o = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['allow_other_choice']
-        multiple_c = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['allow_multiple_selection']
 
         lastchoicefound = False
 
@@ -183,28 +298,71 @@ class tf_struct :
                 if lastchoicefound :
                     labels.append(col)
                     lastchoicefound = False
+                    break
                 if col == labels[-1] :
                     lastchoicefound = True
 
         return labels
 
 
-    # get picture_choice values
-    # returns 
-    def _get_pc_ou_mc_values(self, qname='', qlabels = []) :
+
+    #-----------------------------------------------------------------
+    # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = False
+    # return data frames associated to each possible choice
+    def _get_single_pc_ou_mc_values(self, qname='', qlabels = []) :
         dp_values = []
 
         for i in range(len(qlabels)) :
-            if qlabels[i][:5] != 'Other' :
-                df_res = self.form_results[self.form_results[qname]==qlabels[i]]
-                # print(str(df_res.shape[0]))
-                dp_values.append(df_res)
-            else :
-                df_res = self.form_results[self.form_results[qlabels[i]]!='']
-                dp_values.append(df_res)
+            df_res = self.form_results[self.form_results[qname]==qlabels[i]]
+            dp_values.append(df_res)
+
         return dp_values
 
 
+
+    #-----------------------------------------------------------------
+    # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = True
+    # return data frames associated to each possible choice
+    def _get_multiple_pc_ou_mc_values(self, qname='', qlabels = []) :
+        dp_values = []
+
+        for i in range(len(qlabels)) :
+            for col in self.form_results.columns :
+                if col == qlabels[i]:
+                    dft = self.form_results[self.form_results[qlabels[i]]==qlabels[i]]
+                    dp_values.append(dft)
+
+        return dp_values
+
+
+
+
+    # Get SINGLE DATAFRAME : One option for one question
+    #-----------------------------------------------------------------------------------------------------------------------
+    # Fonctions pour ne recuperer qu'un seul dataframe, celui de reponses a une question specifique
+    # get dropdown values
+    # returns number of hit for each label of dropdown
+    def _get_df_singlechoice_qvalue(self, qname='', rlabel = '', isnot = False) :
+        if not isnot :
+            df_res = self.form_results[self.form_results[qname]==rlabel]
+        else :
+            df_res = self.form_results[self.form_results[qname]!=rlabel]
+        return df_res
+
+    def _get_df_multiplechoice_qvalue(self, rlabel = '', isnot = False) :
+        if not isnot :
+            df_res = self.form_results[self.form_results[rlabel]==rlabel]
+        else :
+            df_res = self.form_results[self.form_results[rlabel]!=rlabel]
+        return df_res
+
+
+
+
+
+    #-----------------------------------------------------------------
+    # DROP FORM STRUCTURE IN A FILE
+    # return data frames associated to each possible choice
     # Fonction aui dump le questionnaire dans un fichier, juste pour le plaisir de l'avoir.
     # On peut l'utiliser une fois
     def dump_tform_structure(self):
@@ -218,4 +376,6 @@ class tf_struct :
                 json.dump(self.form_structure, mefile, indent=4)
                 print('file dumped')
 
+    
+    
 
