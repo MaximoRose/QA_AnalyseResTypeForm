@@ -1,0 +1,1984 @@
+{
+    "id": "YvBfAdHB",
+    "type": "form",
+    "title": "Opportunite GP",
+    "workspace": {
+        "href": "https://api.typeform.com/workspaces/93WULJ"
+    },
+    "theme": {
+        "href": "https://api.typeform.com/themes/rqYVKG"
+    },
+    "settings": {
+        "language": "en",
+        "progress_bar": "percentage",
+        "meta": {
+            "allow_indexing": false
+        },
+        "hide_navigation": false,
+        "is_public": true,
+        "is_trial": false,
+        "show_progress_bar": true,
+        "show_typeform_branding": true,
+        "are_uploads_public": false,
+        "show_time_to_complete": true
+    },
+    "thankyou_screens": [
+        {
+            "id": "Qqjsuctez13k",
+            "ref": "28eaef70-33e8-4b40-8dfe-627dc628224d",
+            "title": "C'est fini ! Merci beaucoup d'avoir repondu. Si vous voulez suivre les actus de mon projet, je les posterai [ici](https://maximorose.eu/category/pro/culture-it/). Sinon, vous pouvez me contacter sur [LinkedIn](https://www.linkedin.com/in/massimo-bruni-5a959619b/). A tr\u00e8s vite, j'esp\u00e8re, pour d\u00e9velopper ensemble la culture IT en France.",
+            "properties": {
+                "show_button": true,
+                "share_icons": true,
+                "button_mode": "reload",
+                "button_text": "again"
+            }
+        },
+        {
+            "id": "DefaultTyScreen",
+            "ref": "default_tys",
+            "title": "Done! Your information was sent perfectly.",
+            "properties": {
+                "show_button": false,
+                "share_icons": false
+            }
+        }
+    ],
+    "welcome_screens": [
+        {
+            "id": "V1mBNYDz1Ygx",
+            "ref": "6ae34aa1-1ec7-4723-b1eb-14db435a5063",
+            "title": "Bonjour ! J'aimerais monter une structure culturelle, type mus\u00e9e, d\u00e9di\u00e9e aux sciences de l'information. Dans le paysage institutionnel, le mus\u00e9e est l'organe cens\u00e9 ouvrir un pan de la connaissance \u00e0 tous les publics : jeunes, ag\u00e9s, professionnels, particuliers, scolaires, touristes, etc. Ses activit\u00e9s sont diverses : des expositions aux ateliers, des colloques aux \u00e9missions de radios, des prestations d'ing\u00e9nierie \u00e0 l'accompagnement de projets culturels. L'enjeu est d'ouvrir et de d\u00e9velopper la culture d'un domaine, en la rendant accessible \u00e0 tous, pour que puisse y germer la cr\u00e9ation. Ce questionnaire anonyme permettra d'\u00e9valuer l'opportunit\u00e9 pour la soci\u00e9t\u00e9 d'une telle structure. N'h\u00e9sitez pas \u00e0 inviter toutes les personnes que vous connaissez \u00e0 le remplir, car il faut viser l'Universalit\u00e9 ! C'est un peu long, mais ce serait chic d'y r\u00e9pondre enti\u00e8rement. Je pourrais vous faire part des r\u00e9sultats si \u00e7a vous int\u00e9resse, et vous en apprendrez alors plus sur vous et sur les autres. C'est \u00e0 \u00e7a que sert l'information : a \u00eatre partag\u00e9e pour augmenter la connaissance globale.",
+            "properties": {
+                "show_button": true,
+                "button_text": "Start"
+            }
+        }
+    ],
+    "fields": [
+        {
+            "id": "IMJklbpi0fIP",
+            "title": "Apprenons \u00e0  se conna\u00eetre",
+            "ref": "f909fc76-4c2f-45b3-8dca-139e9c64d361",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "oYqnhtesJuF5",
+                        "title": "Vous \u00eates...",
+                        "ref": "d15d03f5-ebe0-43f8-a11c-bd347956263c",
+                        "properties": {
+                            "randomize": false,
+                            "alphabetical_order": false,
+                            "choices": [
+                                {
+                                    "id": "3cbUfPAcvZb0",
+                                    "ref": "01F1YRKX0NNVPZJ1WNFMEP507Y",
+                                    "label": "Non genr\u00e9"
+                                },
+                                {
+                                    "id": "ANF0PaDj26Dw",
+                                    "ref": "01F1YRKX0N84KS6BEVA6KNKEMP",
+                                    "label": "Fluide"
+                                },
+                                {
+                                    "id": "zYxZ0DbtI0Nb",
+                                    "ref": "01F1YRKX0NKZJ3FQPQZBQ4ZX0N",
+                                    "label": "Un homme"
+                                },
+                                {
+                                    "id": "f3sJ0HQ9NbKI",
+                                    "ref": "01F1YRKX0NBZJMPTR6XT10RBNQ",
+                                    "label": "Une femme"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "dropdown"
+                    },
+                    {
+                        "id": "BZsILkKYGzKQ",
+                        "title": "Quel est votre \u00e2ge ?",
+                        "ref": "c1ed4a24-5714-4211-97db-86d198ce42cf",
+                        "properties": {
+                            "randomize": false,
+                            "alphabetical_order": false,
+                            "choices": [
+                                {
+                                    "id": "fy2RFMJfKqKd",
+                                    "ref": "01F1YRKX0N75S7D8A29DM470F1",
+                                    "label": "Moins de 18 ans"
+                                },
+                                {
+                                    "id": "LLgLJaQYfDM6",
+                                    "ref": "01F1YRKX0NY6C7VJR2DJFP9182",
+                                    "label": "Entre 18 et 25 ans"
+                                },
+                                {
+                                    "id": "BbELAHtfKMTM",
+                                    "ref": "01F1YRKX0NS15W09DF5D7ZNT7F",
+                                    "label": "Entre 26 et 35 ans"
+                                },
+                                {
+                                    "id": "Uk8ywZByAGtA",
+                                    "ref": "01F1YRKX0NJ7HNSZYZDJZWMAFP",
+                                    "label": "Entre 36 et 50 ans"
+                                },
+                                {
+                                    "id": "wxTqAlU6awXq",
+                                    "ref": "01F1YRKX0N8W4YQN5EZTC487CA",
+                                    "label": "Entre 51 et 75 ans"
+                                },
+                                {
+                                    "id": "9nWj1Z3qQCfd",
+                                    "ref": "01F1YRKX0NQ83C92K63247F5YM",
+                                    "label": "76 ans et plus"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "dropdown"
+                    },
+                    {
+                        "id": "M2yM4x72oiV3",
+                        "title": "Vivez-vous en France ?",
+                        "ref": "2d0f50a8-a347-4b0c-8480-e4e05ba3d9e4",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "8WoLUtHsWKKJ",
+                        "title": "Quel fut votre dernier dipl\u00f4me ?",
+                        "ref": "66a1a576-4f79-4ed5-a7d6-d2696ea084ee",
+                        "properties": {
+                            "randomize": false,
+                            "alphabetical_order": false,
+                            "choices": [
+                                {
+                                    "id": "DjKA3Jc6WSeQ",
+                                    "ref": "01F1YRKX0N0CGAW5JAW7RC3NPJ",
+                                    "label": "Formation professionnel"
+                                },
+                                {
+                                    "id": "tz2jYjz1s52H",
+                                    "ref": "01F1YRKX0NEXB2HWWE22JN8MKV",
+                                    "label": "Bac +2"
+                                },
+                                {
+                                    "id": "gHYC2dl9Q00B",
+                                    "ref": "01F1YRKX0NG2FJGHT2PM7SKCHR",
+                                    "label": "Licence"
+                                },
+                                {
+                                    "id": "HZnAd54IoioY",
+                                    "ref": "01F1YRKX0N4KCRT40CZCMRB3AW",
+                                    "label": "Master / Dipl\u00f4me d'ing\u00e9nieur"
+                                },
+                                {
+                                    "id": "U0CP7E8GNt3W",
+                                    "ref": "01F1YRKX0N5NT33SHH8FY4H9AD",
+                                    "label": "Doctorat"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "dropdown"
+                    },
+                    {
+                        "id": "vMmUInJ5B4C9",
+                        "title": "Travaillez-vous dans le secteur public ?",
+                        "ref": "b1de02da-ffbe-419d-827d-34adf547760b",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "4dOyMP97omhJ",
+                        "title": "Travaillez-vous dans le secteur culturel ?",
+                        "ref": "3db80e5b-fc8e-406e-844a-95b29123ad5e",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "OnnjlaZauNJ0",
+                        "title": "Quelle est votre sp\u00e9cialit\u00e9 ?",
+                        "ref": "941e8542-1cb8-45b9-988f-dd5fa5204fea",
+                        "properties": {
+                            "description": "Il faut en choisir une, d\u00e9sol\u00e9",
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": true,
+                            "supersized": false,
+                            "show_labels": true,
+                            "choices": [
+                                {
+                                    "id": "j2APvL52Jjhs",
+                                    "ref": "0d1bed96-954f-4772-ac86-ca3859509ba9",
+                                    "label": "Services d'informations",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/bjebJhHxN98w",
+                                        "properties": {
+                                            "description": "Computer"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "UVKMy4rU4ADq",
+                                    "ref": "7a17ba0b-9826-4ede-9462-1786c3a52c37",
+                                    "label": "Budget / Finance / Compta",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/RwQK8C526sQb",
+                                        "properties": {
+                                            "description": "budget"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "yrT6iPZb8JDr",
+                                    "ref": "3206029c-aa2b-48ad-bad3-88dfc88f3201",
+                                    "label": "Juridique / Droits",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/VUWeKgMSBx8K",
+                                        "properties": {
+                                            "description": "Justice"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "rYYZOBzDMyOO",
+                                    "ref": "6cb59ea5-70ad-4020-912a-da02520890cc",
+                                    "label": "B\u00e2timent / S\u00e9curit\u00e9 physique",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/Hw2yfZvZC5yL",
+                                        "properties": {
+                                            "description": "Security"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "C4MqaDFEQuAE",
+                                    "ref": "cdb4e8cd-cb48-4b15-b944-6b0a188c392f",
+                                    "label": "D\u00e9veloppement commercial",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/JAMPzdVzT3LW",
+                                        "properties": {
+                                            "description": "Money"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "rIZI68tlDbPV",
+                                    "ref": "473768cb-7b46-4ca1-9091-3589ba5ac9d3",
+                                    "label": "Communication / Partenariats / Ev\u00e9nementiel",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/ghucD5SMwKYN",
+                                        "properties": {
+                                            "description": "speech"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "pNl8uFjq62nc",
+                                    "ref": "b1f13621-93ec-437d-a256-ea8b3696abaf",
+                                    "label": "Ressources humaines / Sant\u00e9 / Social",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/SiVp9Uat9Y9M",
+                                        "properties": {
+                                            "description": "people"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "5KL1iAfy0BXG",
+                                    "ref": "6662dc7a-0afd-4e8c-a61a-17dfd3c61675",
+                                    "label": "Restauration / Tourisme",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/GLP4CWB237mD",
+                                        "properties": {
+                                            "description": "Tourism"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "picture_choice"
+                    }
+                ]
+            },
+            "type": "group"
+        },
+        {
+            "id": "ZBFaCbVYe9jY",
+            "title": "Votre rapport au num\u00e9rique...",
+            "ref": "37071fb3-77e9-4128-ba91-68f7165bfc7b",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "EyykV9VMHRBS",
+                        "title": "Quand utilisez-vous le plus souvent des outils num\u00e9riques ?",
+                        "ref": "b1b037a5-7892-4776-a5fd-8b6b87e5d32d",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "k6kRWhxYSUvU",
+                                    "ref": "4626198f-6e96-467e-b4c9-7a272081b9f4",
+                                    "label": "Dans la vie priv\u00e9e"
+                                },
+                                {
+                                    "id": "UAgkGKCIwj9Z",
+                                    "ref": "d32f97a7-8b69-425b-93bf-967747e92157",
+                                    "label": "Dans la vie professionnelle"
+                                },
+                                {
+                                    "id": "yPrBosQHKzVs",
+                                    "ref": "5d4ee833-d7b6-471b-966f-688ffeabc9d1",
+                                    "label": "Tout le temps"
+                                },
+                                {
+                                    "id": "ydHi6fuOZhS8",
+                                    "ref": "2e6b69ba-fda4-475d-9aef-5a3d1382cfc0",
+                                    "label": "Le moins possible"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "r14e6RHnmlxH",
+                        "title": "Est-ce plutot par plaisir ou par necessite ?",
+                        "ref": "76840245-1817-4432-8154-66f1b7e659e2",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "supersized": false,
+                            "show_labels": true,
+                            "choices": [
+                                {
+                                    "id": "F6eCBhpY1FPm",
+                                    "ref": "ddfbd4cd-0b8b-4779-86f7-06ebff12eeb2",
+                                    "label": "Plaisir",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/5wZG67fhttUL",
+                                        "properties": {
+                                            "description": "Love"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "ToLafOJUX3tY",
+                                    "ref": "60dc0e9d-1fe8-48a1-988b-befd7fd25067",
+                                    "label": "N\u00e9cessit\u00e9",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/9H2uHKVvk6Dk",
+                                        "properties": {
+                                            "description": "constraint"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "picture_choice"
+                    },
+                    {
+                        "id": "DeUtJwpfRd1O",
+                        "title": "Poss\u00e9dez-vous un ou des objet.s suivant.s ?",
+                        "ref": "ab10b85e-2ece-40cf-9054-5ccb83af0c9e",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": false,
+                            "supersized": false,
+                            "show_labels": true,
+                            "choices": [
+                                {
+                                    "id": "G2GKhrIsFSMw",
+                                    "ref": "98f4d379-c23c-4bd2-8f85-bfb42c07e619",
+                                    "label": "Smartphone professionnel",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/CJ6Zr2JCuECa",
+                                        "properties": {
+                                            "description": "Smartphone"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "qeqg8X0Fz4X7",
+                                    "ref": "b19a8c3f-477d-41c0-a0f2-c1053075c3c8",
+                                    "label": "Smartphone personnel",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/4sLDTswb2ZMD",
+                                        "properties": {
+                                            "description": "Smartphone"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "hMv2AB6ji4Fb",
+                                    "ref": "1f96ce9f-10ef-4b73-8dff-f241292ce86a",
+                                    "label": "Ordinateur personnel",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/Rua8cjsZ69Uf",
+                                        "properties": {
+                                            "description": "Computer"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "QwqBPjO1XW5J",
+                                    "ref": "f0e1b762-6822-45b3-9a29-5fbc289c52ec",
+                                    "label": "Ordinateur professionnel",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/uESgQtvyg2Sh",
+                                        "properties": {
+                                            "description": "Computer"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "bmj82KjHxmnR",
+                                    "ref": "6f02d6cd-1d9a-4d03-8df4-53cfa3a16aa8",
+                                    "label": "Des objets connect\u00e9s (Smart watch, Garmin, etc.)",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/nYNvsqFLVDLi",
+                                        "properties": {
+                                            "description": "Smart Watch"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "kwDNUca7qw3H",
+                                    "ref": "f1c976a9-70d9-4a6d-964f-02eb70370678",
+                                    "label": "Rien",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/G9Jm32FjVwJg",
+                                        "properties": {
+                                            "description": "Cloud Cancel"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "picture_choice"
+                    },
+                    {
+                        "id": "bK9T5Pen4AB0",
+                        "title": "Si vous deviez noter votre aisance personnelle avec l'informatique, combien vous donneriez vous ?",
+                        "ref": "fc6c1a09-a09d-4b40-9047-b62b34b1b54a",
+                        "properties": {
+                            "start_at_one": false,
+                            "steps": 11,
+                            "labels": {
+                                "left": "J'ai souvent des soucis",
+                                "right": "Rien ne m'arr\u00eate"
+                            }
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "opinion_scale"
+                    },
+                    {
+                        "id": "IihvSDBsSpUH",
+                        "title": "Avez-vous l'impression de ma\u00eetriser les informations qui vous concernent sur Internet ?",
+                        "ref": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7",
+                        "properties": {
+                            "description": "Vos donn\u00e9es de navigation sur Internet, vos informations de contact sur les diff\u00e9rents sites o\u00f9 vous avez un compte, etc.",
+                            "start_at_one": false,
+                            "steps": 11,
+                            "labels": {
+                                "left": "Pas du tout",
+                                "right": "Je suis un avatar"
+                            }
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "opinion_scale"
+                    },
+                    {
+                        "id": "HapPLe0c3LtH",
+                        "title": "Param\u00e9trez-vous les cookies quand les sites vous le propose ?",
+                        "ref": "7451a1c9-c83f-4af1-a718-2768271e35fe",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "AQWdrBs2ctjL",
+                                    "ref": "88a3aa41-c669-4a09-bbf2-2e766dae332b",
+                                    "label": "Oui"
+                                },
+                                {
+                                    "id": "7jRRTJpHJvLV",
+                                    "ref": "cd6113f7-3c58-4c36-8d7f-db20a8464390",
+                                    "label": "Non"
+                                },
+                                {
+                                    "id": "KL1TA1MDKn6K",
+                                    "ref": "85da9f6c-4d3a-4151-9000-56590d259731",
+                                    "label": "Parfois"
+                                },
+                                {
+                                    "id": "HsCbiEwrenFl",
+                                    "ref": "def902b8-a537-4df7-963d-d7eb1d55e513",
+                                    "label": "Qu'est-ce qu'un cookie num\u00e9rique ?"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "4xciwhJq09rE",
+                        "title": "Avez-vous l'impression de recevoir trop de messages promotionnels sur votre bo\u00eete mail ?",
+                        "ref": "021b761c-bdba-4567-85f6-54a957a0904f",
+                        "properties": {
+                            "description": "A 0, vous ne recevez que les messages que vous avez choisis de recevoir. A 10, vous vous agacez r\u00e9guli\u00e8rement de recevoir une nouvelle pub.",
+                            "start_at_one": false,
+                            "steps": 11,
+                            "labels": {
+                                "left": "Je lis mes newsletters",
+                                "right": "Oui, c'est infernal !"
+                            }
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "opinion_scale"
+                    },
+                    {
+                        "id": "ZkMwKgLi3nvp",
+                        "title": "Comment gerez-vous tous vos mots de passes des differents sites web ?",
+                        "ref": "44631d31-ccba-48a5-820e-bbcd9de1ce11",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "n6ywDHMbaCtH",
+                                    "ref": "fb259715-382a-463d-8337-05b2b01d71df",
+                                    "label": "Papiers, post-it. Car eux, ils ne se font pas hacker"
+                                },
+                                {
+                                    "id": "gydX4YtEDFo3",
+                                    "ref": "2b8bc0a0-8421-40bb-9f02-6a84f7b12a62",
+                                    "label": "Je les enregistre dans mon navigateur, comme ca je vis l'experience la plus fluide possible"
+                                },
+                                {
+                                    "id": "U2xIJ5TlmfTT",
+                                    "ref": "b8f79b07-263c-46e9-992c-7afb84c06038",
+                                    "label": "J'ai un gestionnaire de mots de passe d\u00e9di\u00e9. Tout est crypt\u00e9"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "rT2VhptKefBR",
+                        "title": "Pensez-vous que l'informatique soit une b\u00e9n\u00e9diction ou une mal\u00e9diction ?",
+                        "ref": "00fef622-ba79-4bf7-918f-9e4737f221d4",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "supersized": false,
+                            "show_labels": true,
+                            "choices": [
+                                {
+                                    "id": "PUtK95fzLin3",
+                                    "ref": "945921a5-84cc-4e61-8c0b-4ad7c4d05d42",
+                                    "label": "B\u00e9n\u00e9diction",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/bqr3EFiFUCPK",
+                                        "properties": {
+                                            "description": "Eye of Providence"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "TsEPFPEsZhFs",
+                                    "ref": "b3f55cf2-668d-4226-8528-fcd5c7731a92",
+                                    "label": "Mal\u00e9diction",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/6G4FjnJSsrjk",
+                                        "properties": {
+                                            "description": "Deathly Hallows"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "tKFHm7dcKk8q",
+                                    "ref": "bc7a3aab-d729-4311-a8ec-373ad928a3d1",
+                                    "label": "Dr\u00f4le de question",
+                                    "attachment": {
+                                        "type": "image",
+                                        "href": "https://images.typeform.com/images/E4CRJyy6h2NJ",
+                                        "properties": {
+                                            "description": "yin yang"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "picture_choice"
+                    }
+                ]
+            },
+            "type": "group"
+        },
+        {
+            "id": "SVkWUe7Wcswj",
+            "title": "Enseignement et \u00e9ducation...",
+            "ref": "424f04b4-61c0-484c-8a5d-ff8ba7711698",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "NXnMNhHW9dGK",
+                        "title": "A l'\u00e9cole, vous a-t-on enseign\u00e9 l'informatique ?",
+                        "ref": "5e2862a4-bedd-4460-9a35-c571ef487134",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "evUI2CmdoK14",
+                        "title": "Durant quelle partie de votre scolarit\u00e9 ?",
+                        "ref": "60ce514c-e796-4868-bba5-0d5e856c8b34",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "8PZqDu4qyD80",
+                                    "ref": "afc167f3-ef62-49f1-ae71-94e884098e1f",
+                                    "label": "\u00c9cole primaire"
+                                },
+                                {
+                                    "id": "cFHPsxflXR6k",
+                                    "ref": "eaec8137-7606-41ac-ac00-74fbd74358dd",
+                                    "label": "Coll\u00e8ge"
+                                },
+                                {
+                                    "id": "MY42HJwVMgDM",
+                                    "ref": "9de4e65d-b9de-4d14-a7e2-0a9340f2cb5d",
+                                    "label": "Lyc\u00e9e"
+                                },
+                                {
+                                    "id": "CurShoJN2npr",
+                                    "ref": "daa0fce2-da3c-4345-a778-76d8d6cea701",
+                                    "label": "\u00c9tudes sup\u00e9rieures"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "hENgGmnFSnpK",
+                        "title": "Avez-vous b\u00e9n\u00e9fici\u00e9 de formations, dans le cadre de votre travail ou non, en informatique ?",
+                        "ref": "0b65c817-cf9f-4a15-a047-76690a70e411",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "TtSJ6Qnx4pQF",
+                        "title": "Savez-vous \u00e9crire les nombres en binaire ?",
+                        "ref": "036e97c9-91ea-458a-9975-a5d621dfd564",
+                        "properties": {
+                            "description": "Le binaire est une mani\u00e8re d'\u00e9crire les  nombres avec des \"0\" et des \"1\". C'est la base de la logique utilis\u00e9e dans les ordinateurs."
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "50aXmk8eOhtZ",
+                        "title": "Et bien prouvez le ! Que vaut 0101 ?",
+                        "ref": "c7b74d67-727a-44c2-89cd-eff8e0e2a4fb",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "number"
+                    },
+                    {
+                        "id": "NxVn1lvyHOLG",
+                        "title": "Faux ! Mytho, vas ! C'\u00e9tait *5*. 0101 = 0\\*2\u00b3 + 1\\*2\u00b2 + 0\\*2\u00b9 + 1\\*2\u2070 = 0 + 4 + 0 + 1 (Rappel : 2\u2070 = 1)",
+                        "ref": "f8ff7680-6c0d-41d2-bb32-4406b644a1a6",
+                        "properties": {
+                            "button_text": "Continue",
+                            "hide_marks": false
+                        },
+                        "type": "statement"
+                    },
+                    {
+                        "id": "Sj58NG9HjORn",
+                        "title": "Si je vous disais que je peux vous l'enseigner en une demi-heure, seriez-vous int\u00e9ress\u00e9s pour l'apprendre ?",
+                        "ref": "7767df88-a6c5-4319-a82d-9f22c90d5271",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "FrOxlYq8Jwsu",
+                        "title": "M\u00eame si ce devait-\u00eatre payant ? ",
+                        "ref": "391605f5-486c-42cf-9891-df8d5e357b97",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "v2XKUtC6wDIT",
+                        "title": "Combien seriez-vous pr\u00eat a payer ?",
+                        "ref": "f0c26a88-4fc4-49f5-a31b-0780770e22b0",
+                        "properties": {
+                            "randomize": false,
+                            "alphabetical_order": false,
+                            "choices": [
+                                {
+                                    "id": "FbBqqE0lJUFE",
+                                    "ref": "01F1YRKX0NE1D3JAYMS9JB666T",
+                                    "label": "Moins de 5 euros"
+                                },
+                                {
+                                    "id": "K0MLfwr3UxF2",
+                                    "ref": "01F1YRKX0NMY2TW33XZ22A9JCW",
+                                    "label": "Entre 5 et 10"
+                                },
+                                {
+                                    "id": "mhPhr4eevrtu",
+                                    "ref": "01F1YRKX0N3BZ2HCGAEFHERCV3",
+                                    "label": "Entre 10 et 15"
+                                },
+                                {
+                                    "id": "Lj0wn4TAP6BQ",
+                                    "ref": "01F1YRKX0N9F8KXSAFWKD5S6PR",
+                                    "label": "Bien plus ! Le savoir n'a pas de prix"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "dropdown"
+                    },
+                    {
+                        "id": "wgAdSVuU7RBX",
+                        "title": "Savez-vous ce qu'est un algorithme ?",
+                        "ref": "66770a06-2cd7-49e2-a199-82b901cba8ca",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "j8oXwDOUFmFC",
+                                    "ref": "6be6f486-1af3-476f-81c5-7dcd77177dc8",
+                                    "label": "Aucune idee"
+                                },
+                                {
+                                    "id": "mAOz46tkAMsN",
+                                    "ref": "3c884701-c949-4cbf-b804-42f4ae31b7ed",
+                                    "label": "Une instruction pour un ordinateur"
+                                },
+                                {
+                                    "id": "CZliiQYr8VHE",
+                                    "ref": "05d05414-f02e-4f4b-b6f8-dc43911f6aa8",
+                                    "label": "Une serie d'etapes reproductible pour parvenir a un resultat"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "I789HlZQYdNO",
+                        "title": "Pensez-vous qu'il est important d'apprendre l'informatique \u00e0 l'\u00e9cole ?",
+                        "ref": "1c17c0d5-98a5-4a98-b302-566029a01a0c",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "dwqDAnvQD9L5",
+                        "title": "Pourquoi ?",
+                        "ref": "cbedef8c-874b-4e1f-8f40-69a9c67f7212",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "long_text"
+                    },
+                    {
+                        "id": "Fr1Ipxc0yrTU",
+                        "title": "A partir de quel age pensez-vous qu'on peut apprendre les sciences de l'information (\u00e9criture binaire, algorithmes, programmation) ?",
+                        "ref": "2a35c9be-9146-47c7-9499-caf56f461cd4",
+                        "properties": {
+                            "description": "Tappez simplement le nombre en dessous"
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "number"
+                    },
+                    {
+                        "id": "aMSejU13nLfN",
+                        "title": "On peut l'apprendre des 7 ans !  C'est inclus dans le programme scolaire anglais (la BBC propose m\u00eame des contenus en lien avec le programme [ici](https://www.bbc.co.uk/bitesize/subjects/zyhbwmn)), et les Etats-Unis publient [pas mal de contenus pour les enfants](https://csunplugged.org/en/) (avec le soutien de Microsoft et Google). En France, il y a une association, [Magic Makers](https://www.magicmakers.fr/), mais ses ateliers ne sont h\u00e9las pas disponibles sur tout le territoire. Un mus\u00e9e des sciences de l'informations pourrait proposer des contenus \u00e9ducatifs sur sa plateforme et des ateliers pour les particuliers et les scolaires. Il viendrait en compl\u00e9ment de l'\u00e9cole pour des activit\u00e9s extrascolaires ludiques.",
+                        "ref": "2329d18c-9310-4024-9cc8-52d3cea99e99",
+                        "properties": {
+                            "button_text": "Continue",
+                            "hide_marks": false
+                        },
+                        "type": "statement"
+                    },
+                    {
+                        "id": "LnMLflXPfnmF",
+                        "title": "Lorsque vous avez un probleme d'informatique, le plus souvent, vous ...",
+                        "ref": "bbb12efc-7374-44e1-9487-743838536706",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "NeQKdEJNJF7A",
+                                    "ref": "ea6a65ea-a711-4bce-a38b-cc105a7ffba0",
+                                    "label": "Recherchez sur Internet et cliquez sur les premiers liens qui vous sont retourn\u00e9s"
+                                },
+                                {
+                                    "id": "biQzIw5NMPGg",
+                                    "ref": "a1d2c6d8-3997-4472-a7af-c4696ddfa12b",
+                                    "label": "Recherchez sur Internet et cliquez sur les sites que vous connaissez bien"
+                                },
+                                {
+                                    "id": "wj1S0LkEPSCW",
+                                    "ref": "f0159dbf-8ea2-481a-8484-add84408f291",
+                                    "label": "Demandez \u00e0 un proche plus exp\u00e9riment\u00e9 de vous aider"
+                                },
+                                {
+                                    "id": "ZM0pDpclQzM2",
+                                    "ref": "68f96ad6-be55-4095-beed-dd5a1155c05e",
+                                    "label": "Restez bloqu\u00e9s jusqu'\u00e0 ce que la Providence vous apporte une \u00e9ventuelle solution"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    }
+                ]
+            },
+            "type": "group"
+        },
+        {
+            "id": "gpBELFFYrpS0",
+            "title": "L'offre culturelle num\u00e9rique",
+            "ref": "64c303d5-4d4c-47bc-92e6-90ed02985078",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "vyi1RKqR6x75",
+                        "title": "Comment vous tenez-vous inform\u00e9.e.s de l'actualit\u00e9 culturelle ?",
+                        "ref": "6f669fb2-4641-44db-b322-ce500230c9a1",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "ZNjFtWUmk2Cp",
+                                    "ref": "7f430a71-1ed4-420b-92a7-922fddb41604",
+                                    "label": "Par des abonnements bien sentis sur les reseaux sociaux"
+                                },
+                                {
+                                    "id": "vkeoENQnJYmX",
+                                    "ref": "2031d84c-d847-4f63-8c87-2f4df415f2b1",
+                                    "label": "En allant sur les sites des mus\u00e9es ou de leurs partenaires"
+                                },
+                                {
+                                    "id": "5AWYGiSjQTnP",
+                                    "ref": "c7526356-e854-4cd9-8eff-f8479e9c2488",
+                                    "label": "Gr\u00e2ce \u00e0 la t\u00e9l\u00e9vision, la radio, les journaux ou les media web"
+                                },
+                                {
+                                    "id": "jqlDYXkOAuJI",
+                                    "ref": "cfd4ccdd-74bb-47be-b514-1647a0f8d2d7",
+                                    "label": "Gr\u00e2ce au bouche \u00e0 oreille"
+                                },
+                                {
+                                    "id": "JRyVSFtCGC2C",
+                                    "ref": "6a83ff83-18f2-4ba5-a72b-f4ead189a3c2",
+                                    "label": "Je ne recherche pas activement de l\u2019information sur ce sujet"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "SfiZNZEpZLSi",
+                        "title": "Durant l'ann\u00e9e 2020 avez-vous eu l'occasion de voir l'une des vid\u00e9os list\u00e9es sur l'image ?",
+                        "ref": "f9f0a83c-36d6-4d0e-b2a2-5075c5ccd7a0",
+                        "properties": {
+                            "description": "(Elles sont sur YouTube. Si vous utilisez un outil de lecture lorsque vous surfez, cette liste est disponible sous forme de texte, [ici](https://maximorose.eu/2021/03/17/top-videos-culture-2020-youtube/))",
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "3J1AuHU8rcp3",
+                                    "ref": "3cfc8c9c-9164-4a32-a72f-45e063344b1f",
+                                    "label": "Oui"
+                                },
+                                {
+                                    "id": "hFVRAaEsjTJu",
+                                    "ref": "8f831216-c68b-46b4-96ce-302ff6598fa8",
+                                    "label": "Non"
+                                },
+                                {
+                                    "id": "kGGexcrXvPQJ",
+                                    "ref": "94777382-12af-48bc-b955-6eb3d9546d1c",
+                                    "label": "Peut-etre"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice",
+                        "attachment": {
+                            "type": "image",
+                            "href": "https://images.typeform.com/images/R5YvugbsRJpM"
+                        },
+                        "layout": {
+                            "type": "float",
+                            "attachment": {
+                                "type": "image",
+                                "href": "https://images.typeform.com/images/R5YvugbsRJpM",
+                                "properties": {
+                                    "focal_point": {
+                                        "x": 0,
+                                        "y": 0
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": "m3cIyvOrSQgC",
+                        "title": "Pensez-vous en regarder une, maintenant que vous avez toutes les informations pour le faire ?",
+                        "ref": "0980b7b5-f5e7-4751-91f7-d78fe2f92334",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "xfSyypYQfRo0",
+                                    "ref": "d9e824bc-7de5-473d-a79c-a79a772f58f1",
+                                    "label": "Oui"
+                                },
+                                {
+                                    "id": "ROYDcJYRvR5X",
+                                    "ref": "e87e1df3-6c9a-4298-83ea-ca22abec961b",
+                                    "label": "Non"
+                                },
+                                {
+                                    "id": "L26xdZzjrXix",
+                                    "ref": "c37cc3cb-48ae-495d-91ba-8c2e0d2cbce7",
+                                    "label": "On verra"
+                                },
+                                {
+                                    "id": "Y4hyUbmSFYE6",
+                                    "ref": "a093ac63-6b5f-4343-a240-a356fa3578a5",
+                                    "label": "J'en ai regard\u00e9 !"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "9pyb2EM15zBg",
+                        "title": "C'\u00e9tait comment ?",
+                        "ref": "6142171f-1d56-4527-9ef8-fc8908e1c59f",
+                        "properties": {
+                            "shape": "star",
+                            "steps": 5
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "rating"
+                    },
+                    {
+                        "id": "VQ8iQTpII5iU",
+                        "title": "Vous souvenez-vous sur quelle.s plateforme.s c'\u00e9tai.en.t ?",
+                        "ref": "25b5649f-f848-452b-8a56-6653e164f397",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "PxDjO7yhtVgJ",
+                                    "ref": "372fcddb-50dc-4afa-9515-5a8684c8da6e",
+                                    "label": "FaceBook"
+                                },
+                                {
+                                    "id": "uDy5X56LWo9t",
+                                    "ref": "6f7239dd-6f8f-48bf-8c0c-751ab45f1a06",
+                                    "label": "Youtube"
+                                },
+                                {
+                                    "id": "7hSPlMDfLDwb",
+                                    "ref": "5ac9585c-8559-449c-b53c-a5037e8c7c7c",
+                                    "label": "Instagram"
+                                },
+                                {
+                                    "id": "5SN4UH22AHpH",
+                                    "ref": "6842a4c3-a2fb-4e2f-8727-ced05c445d4f",
+                                    "label": "Sur le site de l'instiution"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "ExnuASVzZF96",
+                        "title": "Aviez-vous un compte sur cette plateforme ?",
+                        "ref": "c2a1f147-cdad-4657-8f76-5dae8c35f4c5",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "yes_no"
+                    },
+                    {
+                        "id": "I3G4Wsg6JAGd",
+                        "title": "S'il existait un endroit sur Internet o\u00f9 trouver toutes les vid\u00e9os post\u00e9es par les institutions culturelles (th\u00e9\u00e2tre, danse, sciences, s\u00e9minaires, conf\u00e9rences, etc.), iriez-vous le consulter de temps en temps ?",
+                        "ref": "0617b53e-d71d-4db7-a406-2e23be3f9286",
+                        "properties": {
+                            "start_at_one": false,
+                            "steps": 11,
+                            "labels": {
+                                "left": "Non. Jamais. ",
+                                "right": "Tous les jours !"
+                            }
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "opinion_scale"
+                    },
+                    {
+                        "id": "VK6kxx4uSZjR",
+                        "title": "Depuis le debut du confinement, avez-vous pris part \u00e0 des activit\u00e9s num\u00e9riques organis\u00e9es par des institutions culturelles (mus\u00e9es, fondations, th\u00e9\u00e2tres, cin\u00e9ma, biblioth\u00e8que, etc.) ou par le service public de mani\u00e8re plus g\u00e9n\u00e9rale (e.g activit\u00e9s organis\u00e9es par des mairies ou des associations) ?",
+                        "ref": "83785bd2-d839-4c4d-aca9-dc59d76602ff",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "gN8lDC2zrhED",
+                                    "ref": "05706901-541d-4185-897d-f7a97e130deb",
+                                    "label": "Oui, c'est super de pouvoir profiter d'autant de contenus si facilement !"
+                                },
+                                {
+                                    "id": "FpCnGpc0qZRg",
+                                    "ref": "c4d60e70-7d28-4d77-a5dc-2906e0be10dd",
+                                    "label": "J'ai fait quelques activit\u00e9s en lignes ou suivi quelques replay."
+                                },
+                                {
+                                    "id": "hdMEAfEeTa6H",
+                                    "ref": "bbd2ddb8-43ca-469e-87b7-e463449f7b20",
+                                    "label": "J'ai beaucoup de mal \u00e0 trouver des \u00e9v\u00e9nements qui m'interessent."
+                                },
+                                {
+                                    "id": "WfK5PmNgsiJ1",
+                                    "ref": "98240fc4-1e24-455b-ad14-dbb8aabebfe1",
+                                    "label": "Je n'ai pas vraiment cherch\u00e9."
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "JN4TO5fjBNlJ",
+                        "title": "Parmis les institutions suivantes selectionnez celles que vous connaissez :",
+                        "ref": "d750b21c-9c37-4bcc-9c34-4cf239cbd727",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "nocv8uFoHMkz",
+                                    "ref": "69139bef-89c2-4915-8777-5c5c28a3cd6a",
+                                    "label": "ANSSI"
+                                },
+                                {
+                                    "id": "PlygIQu4X0xP",
+                                    "ref": "e52b763a-a82a-41cf-8501-8b8e3809ac91",
+                                    "label": "CNIL"
+                                },
+                                {
+                                    "id": "l5cgu90TwGsO",
+                                    "ref": "d8f1814a-a265-402d-9f3b-246c0391af07",
+                                    "label": "DINUM"
+                                },
+                                {
+                                    "id": "jwmuXW8hP8VQ",
+                                    "ref": "484019f4-026a-46f5-810d-b22a784020d0",
+                                    "label": "INRIA"
+                                },
+                                {
+                                    "id": "CML5SfSHfmYz",
+                                    "ref": "3a5482c6-0d27-4ba6-a5d3-2ef94837bf98",
+                                    "label": "Aucune"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    }
+                ]
+            },
+            "type": "group"
+        },
+        {
+            "id": "CGqTaJ0u3aBa",
+            "title": "Les sujets qui vous interessent",
+            "ref": "cc0b892a-e865-47bb-b990-e38adb26ed9c",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "0UMC41abtPgm",
+                        "title": "Parmis les principes suivants, lesquels pensez-vous que l'Etat devrait syst\u00e9matiquement appliquer pour les services num\u00e9riques qu'il developpe ?",
+                        "ref": "d98882c3-c5d5-43e3-bc03-6aec2f52cf54",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "oSrdgLTJO247",
+                                    "ref": "1c97c724-cda0-4251-b541-c381b123535f",
+                                    "label": "Protection des donn\u00e9es personnelles, Rgpd"
+                                },
+                                {
+                                    "id": "4ikKBEvismRt",
+                                    "ref": "a783c448-5f2e-491b-95cc-81a69280f4b7",
+                                    "label": "Green IT et \u00e9coconception des services d'informations"
+                                },
+                                {
+                                    "id": "pBCSZkoVJoI0",
+                                    "ref": "1acc16ff-8f3c-4048-a430-547cb92f8a51",
+                                    "label": "Proposer des services accessibles aux personnes en situation de handicap"
+                                },
+                                {
+                                    "id": "sZF8aqY0lAdM",
+                                    "ref": "ad8f7c9f-9876-4dd3-8cf3-d55db0b9a38e",
+                                    "label": "Encourager les d\u00e9marches d'acc\u00e8s universel \u00e0 la connaissance (Open source)"
+                                },
+                                {
+                                    "id": "DQNqd4wVG5DF",
+                                    "ref": "50f63776-bd19-4077-8f64-3783edb0fc9b",
+                                    "label": "Rendre accessible les donn\u00e9es publiques et favoriser l'interop\u00e9rabilit\u00e9 pour automatiser, et donc acc\u00e9lerer, les d\u00e9marches administratives"
+                                },
+                                {
+                                    "id": "DWamCDzb39W7",
+                                    "ref": "3d0fddb2-3959-4b0f-a4fe-1ac2c9b51cf4",
+                                    "label": "Aucune."
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "UUHA1PBnrPOH",
+                        "title": "Les sujets de transformation de la soci\u00e9t\u00e9 par le num\u00e9rique vous int\u00e9ressent-ils ?",
+                        "ref": "dd8f5133-5428-47e1-8903-716bdd5ff64d",
+                        "properties": {
+                            "description": "Avez-vous tendance a lire des articles qui en parle ?",
+                            "start_at_one": false,
+                            "steps": 11,
+                            "labels": {
+                                "left": "Aucun interet",
+                                "right": "Je ne lis que ca"
+                            }
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "opinion_scale"
+                    },
+                    {
+                        "id": "JYDLq41DRqDO",
+                        "title": "Lesquels plus particulierement...",
+                        "ref": "63daf17c-35a8-43cf-99f6-806b62db85a7",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "lNehTGifid3K",
+                                    "ref": "f6190dec-0f5c-45c5-9ef5-bf097bd77211",
+                                    "label": "Toutes les dernieres tendances en mati\u00e8re d'innovation technologique"
+                                },
+                                {
+                                    "id": "FqiekX2pcHXn",
+                                    "ref": "a8eaf66b-5be2-4195-bf9e-9c3f9c5eedd7",
+                                    "label": "Comment le num\u00e9rique influt-il sur nos droits et nos libert\u00e9s ? Quels sont les risques et menaces (reconnaissance faciale, manipulation des masses, etc.)?"
+                                },
+                                {
+                                    "id": "y2Rg9UwVZqpp",
+                                    "ref": "52644a33-b859-4534-9e97-fc63d480e65f",
+                                    "label": "Comment les technologies permettent la cr\u00e9ation de r\u00e9seaux sociaux humains et l'\u00e9mergence de sous-cultures ou de mouvements de mobilisation populaires"
+                                },
+                                {
+                                    "id": "gun10ELm9rbo",
+                                    "ref": "4ea64683-9641-4a88-adf1-969b52bc4b59",
+                                    "label": "Les nouveaux business qui \u00e9mergent sur internet (le drop shipping, les NFTs, les cryptomonnaies, etc.)"
+                                },
+                                {
+                                    "id": "oCYznSNgOvmM",
+                                    "ref": "3de77718-7637-4e78-b079-39178c9e141e",
+                                    "label": "Les applications de l'informatique aux autres domaines de la connaissance : sant\u00e9, social, astrophysique, architecture, design, mode, etc."
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "6MdurgsnsBfD",
+                        "title": "Aujourd'hui, comment vous tenez-vous inform\u00e9 des innovations ou des actualit\u00e9s li\u00e9es au num\u00e9rique ?",
+                        "ref": "6bccc00a-2fd3-44b0-86e1-9366a8d5adea",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": true,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "ZiwxAQ4dW7Br",
+                                    "ref": "f8c44aef-4138-4bc4-b64a-3ecb23d52a72",
+                                    "label": "Je lis les articles sur ces sujets qui sont publi\u00e9s dans mes quotidiens habituels"
+                                },
+                                {
+                                    "id": "9cglNp7L8Mzy",
+                                    "ref": "2e4cfc02-c8e7-4440-96ab-dd480eef3701",
+                                    "label": "Je suis abonn\u00e9s \u00e0 quelques institutions ou entreprises de l'informatique sur les r\u00e9seaux"
+                                },
+                                {
+                                    "id": "8zccLHjzWSdE",
+                                    "ref": "dd41bd46-818b-4c0f-b1ca-ff20bc689259",
+                                    "label": "Je consulte r\u00e9guli\u00e8rement des sites ou magazines sp\u00e9cialis\u00e9s"
+                                },
+                                {
+                                    "id": "KAKM9sIK01j6",
+                                    "ref": "5e6dd985-d267-4cbf-8be7-9173b8fab5b8",
+                                    "label": "Je vais r\u00e9guli\u00e8rement sur des sites type Reddit ou Hackernews o\u00f9 une communaut\u00e9 de passionn\u00e9s partage ses articles"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "knFvF00VNISN",
+                        "title": "Y-a-t-il un sujet ou une question qui vous int\u00e9resse plus que les autres en ce qui concerne l'informatisation des soci\u00e9t\u00e9s ? ",
+                        "ref": "a1bbd134-cb5d-4dc4-9b76-aa188f5f667a",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "long_text"
+                    }
+                ]
+            },
+            "type": "group"
+        },
+        {
+            "id": "JURfFbfVvys1",
+            "title": "Pour conclure",
+            "ref": "787a6bba-4eb9-44a8-951c-fa8e6890f1a2",
+            "properties": {
+                "button_text": "Continue",
+                "show_button": true,
+                "fields": [
+                    {
+                        "id": "t656hX85mrxs",
+                        "title": "Avez-vous d\u00e9j\u00e0 entendu parler d'un mus\u00e9e des sciences de l'information ?",
+                        "ref": "9d9d740a-4b15-4577-af6c-52b1cf2e1746",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": false,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "nj8TCwUYmtYp",
+                                    "ref": "fbd767ce-4e90-4906-b270-d55728af6b94",
+                                    "label": "Oui, en France"
+                                },
+                                {
+                                    "id": "oYhzmdNdhFMB",
+                                    "ref": "6efacc35-2ac4-49d7-a24e-311da366e961",
+                                    "label": "Oui, \u00e0 l'\u00e9tranger"
+                                },
+                                {
+                                    "id": "vL5gV4UCVB5I",
+                                    "ref": "9f0e46d3-006e-484a-b074-3f914dba60a4",
+                                    "label": "Non"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    },
+                    {
+                        "id": "pfpA6xbQM1dT",
+                        "title": "Super ! Pourriez-vous m'indiquer son nom ?",
+                        "ref": "2fcf8d76-2372-4834-9db2-1bd8a2944c95",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "long_text"
+                    },
+                    {
+                        "id": "bs6B4DKzBtxP",
+                        "title": "Pensez-vous que ce serait une bonne chose d'en avoir un ?",
+                        "ref": "c1b7bfb2-59de-4fd8-a118-1bc0c70f87a6",
+                        "properties": {
+                            "shape": "lightbulb",
+                            "steps": 5
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "rating"
+                    },
+                    {
+                        "id": "FnYpmvr9sOid",
+                        "title": "Y a-t-il des contenus sp\u00e9cifiques li\u00e9s \u00e0 l'informatique ou au num\u00e9rique auxquels vous souhaiteriez pouvoir acc\u00e9der librement ? Des sujets sur lesquels vous souhaiteriez \u00eatre mieux inform\u00e9s ? Une liste de logiciels de r\u00e9f\u00e9rence pour ne pas risquer d'avoir un virus ? N'importe quoi qui vous passe par la t\u00eate en lien avec notre sujet !",
+                        "ref": "d9464214-731d-455d-9254-7f17a36bca0b",
+                        "properties": {},
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "long_text"
+                    },
+                    {
+                        "id": "kMJmPLtGWg8U",
+                        "title": "Enfin, si un site Internet vous permettait d'acc\u00e9der \u00e0 des supports de formation, des ateliers, des articles d'actualit\u00e9s ou des conf\u00e9rences en lien avec les sciences de l'information ; si, en plus, il vous permettait d'acc\u00e9der a tous les contenus culturels num\u00e9riques produits par l'Etat ou ses partenaires ; vous pensez qu'il devrait \u00eatre...",
+                        "ref": "112c4a23-0e23-4b21-9bce-38357d9ce5c9",
+                        "properties": {
+                            "randomize": false,
+                            "allow_multiple_selection": false,
+                            "allow_other_choice": true,
+                            "vertical_alignment": true,
+                            "choices": [
+                                {
+                                    "id": "j7pxjG3YWTl6",
+                                    "ref": "f049d2b9-48d6-41c7-8622-29cc4f677a85",
+                                    "label": "Plut\u00f4t public : La connaissance doit etre accessible a tous les citoyens \u00e9galement, et c'est le r\u00f4le de l'Etat de s'en assurer. Il doit proteger et nourrir le patrimoine en d\u00e9veloppant sa culture."
+                                },
+                                {
+                                    "id": "yAGc6PjP9bML",
+                                    "ref": "f74bc02e-0061-422a-8b29-e8dfe5cb7597",
+                                    "label": "Plut\u00f4t priv\u00e9 : Car l'obligation de rentabilit\u00e9 \u00e9conomique et la souplesse administrative sont les plus puissants vecteurs d'innovation d'un march\u00e9 globalis\u00e9"
+                                }
+                            ]
+                        },
+                        "validations": {
+                            "required": false
+                        },
+                        "type": "multiple_choice"
+                    }
+                ]
+            },
+            "type": "group"
+        }
+    ],
+    "logic": [
+        {
+            "type": "field",
+            "ref": "5e2862a4-bedd-4460-9a35-c571ef487134",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "0b65c817-cf9f-4a15-a047-76690a70e411"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "5e2862a4-bedd-4460-9a35-c571ef487134"
+                            },
+                            {
+                                "type": "constant",
+                                "value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "60ce514c-e796-4868-bba5-0d5e856c8b34"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "7451a1c9-c83f-4af1-a718-2768271e35fe"
+                        }
+                    },
+                    "condition": {
+                        "op": "equal",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 10
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "7451a1c9-c83f-4af1-a718-2768271e35fe"
+                        }
+                    },
+                    "condition": {
+                        "op": "equal",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 9
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "7451a1c9-c83f-4af1-a718-2768271e35fe"
+                        }
+                    },
+                    "condition": {
+                        "op": "equal",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 8
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "7451a1c9-c83f-4af1-a718-2768271e35fe"
+                        }
+                    },
+                    "condition": {
+                        "op": "equal",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "4cc9de09-5ed9-48f9-a3be-beadbf5f9ca7"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 7
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "021b761c-bdba-4567-85f6-54a957a0904f"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "036e97c9-91ea-458a-9975-a5d621dfd564",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "c7b74d67-727a-44c2-89cd-eff8e0e2a4fb"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "036e97c9-91ea-458a-9975-a5d621dfd564"
+                            },
+                            {
+                                "type": "constant",
+                                "value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "7767df88-a6c5-4319-a82d-9f22c90d5271"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "0980b7b5-f5e7-4751-91f7-d78fe2f92334",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "6142171f-1d56-4527-9ef8-fc8908e1c59f"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "0980b7b5-f5e7-4751-91f7-d78fe2f92334"
+                            },
+                            {
+                                "type": "choice",
+                                "value": "a093ac63-6b5f-4343-a240-a356fa3578a5"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "0617b53e-d71d-4db7-a406-2e23be3f9286"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "f9f0a83c-36d6-4d0e-b2a2-5075c5ccd7a0",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "0980b7b5-f5e7-4751-91f7-d78fe2f92334"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "f9f0a83c-36d6-4d0e-b2a2-5075c5ccd7a0"
+                            },
+                            {
+                                "type": "choice",
+                                "value": "8f831216-c68b-46b4-96ce-302ff6598fa8"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "25b5649f-f848-452b-8a56-6653e164f397"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "b1de02da-ffbe-419d-827d-34adf547760b",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "3db80e5b-fc8e-406e-844a-95b29123ad5e"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "b1de02da-ffbe-419d-827d-34adf547760b"
+                            },
+                            {
+                                "type": "constant",
+                                "value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "941e8542-1cb8-45b9-988f-dd5fa5204fea"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "c7b74d67-727a-44c2-89cd-eff8e0e2a4fb",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "66770a06-2cd7-49e2-a199-82b901cba8ca"
+                        }
+                    },
+                    "condition": {
+                        "op": "equal",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "c7b74d67-727a-44c2-89cd-eff8e0e2a4fb"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "f8ff7680-6c0d-41d2-bb32-4406b644a1a6"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "9d9d740a-4b15-4577-af6c-52b1cf2e1746",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "c1b7bfb2-59de-4fd8-a118-1bc0c70f87a6"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "9d9d740a-4b15-4577-af6c-52b1cf2e1746"
+                            },
+                            {
+                                "type": "choice",
+                                "value": "9f0e46d3-006e-484a-b074-3f914dba60a4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "2fcf8d76-2372-4834-9db2-1bd8a2944c95"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "2d0f50a8-a347-4b0c-8480-e4e05ba3d9e4",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "66a1a576-4f79-4ed5-a7d6-d2696ea084ee"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "6142171f-1d56-4527-9ef8-fc8908e1c59f",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "0617b53e-d71d-4db7-a406-2e23be3f9286"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "f8ff7680-6c0d-41d2-bb32-4406b644a1a6",
+            "actions": [
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "66770a06-2cd7-49e2-a199-82b901cba8ca"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        }
+    ],
+    "_links": {
+        "display": "https://j85vsp5f9lc.typeform.com/to/YvBfAdHB"
+    }
+}
