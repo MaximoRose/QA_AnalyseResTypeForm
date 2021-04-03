@@ -35,7 +35,7 @@ def clean_lists_for_cheesepie(labels = [], values = []) :
 # label est la liste des options possibles pour une questions
 # Values correspond au dataframe associe
 # nnbreps est le nombre de repondants du questionnaire, ou la totalite sur laquelle on veut faire les taux
-def clean_lists_multiplechoices_histogramme_rate(labels = [], values = [], nbreps = 1) :
+def clean_lists_multiplechoices_histogramme(labels = [], values = [], nbreps = 1) :
     clean_labels = []
     clean_values = []
     if len(labels) != len(values) :
@@ -142,6 +142,8 @@ class tf_struct :
 
     # Retourne les options et les resultats par options pour une questions donnee dans un groupe donne
     def get_results(self, gidx=-1, qid='') :
+        qoptions = []
+        qvalues = []
         qidx_ing = 0
         if qid == '' :
             print('Please give question id.')
@@ -151,26 +153,44 @@ class tf_struct :
             return
         else :
             group_questions = self.form_fields[gidx]['properties']['fields']
+
             for i in range(len(group_questions)) :
+
                 if group_questions[i]['id'] == qid :
                     qidx_ing = i
                     qtitle = group_questions[i]['title']
                     # print(qtitle)
                     qtype = group_questions[i]['type']
                     # print(qtype)
+
                     if qtype == 'dropdown' :
                         qoptions = self._get_dp_options(gidx=gidx, qid=qid, qidx=qidx_ing)
                         qvalues = self._get_dp_values (qname=qtitle, qlabels=qoptions)
+
+
                     elif qtype == 'yes_no' :
                         qoptions = ['oui', 'non']
                         qvalues = self._get_yn_values(qname=qtitle)
+
+
                     elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
+
                         multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
-                        qoptions = self._get_pc_ou_mc_options(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        other_o = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_other_choice']
+                        qoptions = self._get_pc_ou_mc_options(gidx=gidx, qid=qid, qidx=qidx_ing, multiplec = multiple_c, otherchoice = other_o)
+
                         if not multiple_c :
-                            qvalues = self._get_single_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
+                            qvalues = self._get_single_pc_ou_mc_values (qname=qtitle, qlabels=qoptions, otherchoice = other_o)
                         else :
-                            qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
+                            qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions, otherchoice = other_o)
+                    
+                    elif qtype == 'opinion_scale' :
+                        qoptions = self._get_opinion_options(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
+                        qvalues = self._get_opinion_size(gidx=gidx, qid=qid, qidx=qidx_ing) 
+
+                    else :
+                        print("Question type not found in function. There must be another way, or you'll have to modify code...")
 
                     break
     
@@ -197,6 +217,27 @@ class tf_struct :
                 if group_questions[i]['id'] == qid :
                     qidx_ing = i
                     qtype = group_questions[i]['type']
+                    break
+        
+        return qtype
+
+
+    # Return question title
+    def get_q_title(self, gidx=-1, qid='') :
+        qidx_ing = 0
+        qtype = ''
+        if qid == '' :
+            print('Please give question id.')
+            return
+        if gidx == -1 :
+            print('Please give group idex.')
+            return
+        else :
+            group_questions = self.form_fields[gidx]['properties']['fields']
+            for i in range(len(group_questions)) :
+                if group_questions[i]['id'] == qid :
+                    qidx_ing = i
+                    qtype = group_questions[i]['title']
                     break
         
         return qtype
@@ -229,10 +270,42 @@ class tf_struct :
                             qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
                         else :
                             qvalues = self._get_df_multiplechoice_qvalue (rlabel=label, isnot=isnot)
+                            
                             return
                     break
 
         return qvalues
+
+
+    # Get mean number of item selected for a multiple choice
+    #-----------------------------------------------------------------------------------------------------------------------
+    # Fonctions pour ne recuperer qu'un seul dataframe, celui de reponses a une question specifique
+    # get dropdown values
+    # returns number of hit for each label of dropdown
+    def get_meanNbItem_in_multipleChoice(self, possiblechoices = [], label_expt = 'Howmuchwoodwouldawoodchuckchuckifawoodchuckcouldchuckwood') :
+        list_res = []
+        meanV = 0.0
+        nb_excpt = 0
+        if possiblechoices == [] :
+            print('Liste of options empty')
+            return
+        else :
+            df = self.form_results
+            for index, row in df.iterrows():
+                nb_opt = 0
+                for i in range(len(possiblechoices)) :
+                    if row[possiblechoices[i]] == possiblechoices[i] :
+                        if row[possiblechoices[i]] != label_expt :
+                            nb_opt += 1
+                        else : 
+                            nb_excpt += 1
+                list_res.append(nb_opt)
+            total = (len(list_res) + nb_excpt)
+            seum = sum(list_res)
+            meanV = seum / total
+
+        return meanV
+
 
 
     #-------------------------------------------------
@@ -281,9 +354,9 @@ class tf_struct :
     # get picture_choice options
     # returns list of label options
     # Integre le nom "Other.x" de la colonne associee dans le CSV
-    def _get_pc_ou_mc_options(self, gidx=-1, qid='', qidx=-1) :
+    def _get_pc_ou_mc_options(self, gidx=-1, qid='', qidx=-1, multiplec = False, otherchoice = False) :
         choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['choices']
-        other_o = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['allow_other_choice']
+        qt_Pi = self.form_fields[gidx]['properties']['fields'][qidx]['title']
 
         lastchoicefound = False
 
@@ -291,16 +364,32 @@ class tf_struct :
         for j in range(len(choices)) :
             # print(choices[j]["label"])
             labels.append(choices[j]["label"])
-        
 
-        if other_o == 'true' :
-            for col in self.form_results.columns :
-                if lastchoicefound :
-                    labels.append(col)
-                    lastchoicefound = False
-                    break
-                if col == labels[-1] :
-                    lastchoicefound = True
+        # print(labels[-1])        
+
+        if otherchoice :
+            if multiplec :
+                # print("I'm in")
+                for col in self.form_results.columns :
+                    if lastchoicefound :
+                        labels.append(col)
+                        lastchoicefound = False
+                        break
+                    if col == labels[-1] :
+                        # print("Last choice found")
+                        lastchoicefound = True
+            else :
+                # print("I'm in")
+                for col in self.form_results.columns :
+                    if lastchoicefound :
+                        labels.append(col)
+                        lastchoicefound = False
+                        break
+                    if col == qt_Pi :
+                        # print("Last choice found")
+                        lastchoicefound = True
+
+
 
         return labels
 
@@ -309,12 +398,21 @@ class tf_struct :
     #-----------------------------------------------------------------
     # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = False
     # return data frames associated to each possible choice
-    def _get_single_pc_ou_mc_values(self, qname='', qlabels = []) :
+    def _get_single_pc_ou_mc_values(self, qname='', qlabels = [],  otherchoice = False) :
         dp_values = []
-
+        lastcolname = 'Neposezjamaisunequestionsouslaformeduneaffirmationonrisqueraitdelaprendrepouruneprescription'
+        # If other choice, get colomn last name
+        if otherchoice :
+            lastcolname = qlabels[-1]
         for i in range(len(qlabels)) :
-            df_res = self.form_results[self.form_results[qname]==qlabels[i]]
-            dp_values.append(df_res)
+            # Verifier que le qlabel ne contienne pas Other ou Other.
+            if qlabels[i] != lastcolname :
+                df_res = self.form_results[self.form_results[qname]==qlabels[i]]
+                dp_values.append(df_res)
+            else :
+                print ('POOOOO')
+                df_res = self.form_results[self.form_results[lastcolname].notnull()]
+                dp_values.append(df_res)
 
         return dp_values
 
@@ -336,6 +434,25 @@ class tf_struct :
 
 
 
+    # Retourne les labels de min et max de l'opinion
+    def _get_opinion_options(self, gidx=-1, qid='', qidx=-1) :
+        choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['labels']
+
+        labels = [choices['left'], choices['right']]
+
+        return labels
+
+    # Retourne les labels de min et max de l'opinion
+    def _get_opinion_size(self, gidx=-1, qid='', qidx=-1) :
+        l_res = []
+        size = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['steps']
+        startone = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['start_at_one']
+        if startone :
+            l_res = [*range(1,size,1)]
+        else :
+            l_res = [*range(0,size,1)]
+        return l_res
+
 
     # Get SINGLE DATAFRAME : One option for one question
     #-----------------------------------------------------------------------------------------------------------------------
@@ -349,13 +466,13 @@ class tf_struct :
             df_res = self.form_results[self.form_results[qname]!=rlabel]
         return df_res
 
+    # reourne le dataframe associe a une reponse attendue
     def _get_df_multiplechoice_qvalue(self, rlabel = '', isnot = False) :
         if not isnot :
             df_res = self.form_results[self.form_results[rlabel]==rlabel]
         else :
             df_res = self.form_results[self.form_results[rlabel]!=rlabel]
         return df_res
-
 
 
 
