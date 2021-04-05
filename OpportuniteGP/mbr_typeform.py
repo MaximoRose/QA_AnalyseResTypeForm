@@ -182,12 +182,17 @@ class tf_struct :
                         if not multiple_c :
                             qvalues = self._get_single_pc_ou_mc_values (qname=qtitle, qlabels=qoptions, otherchoice = other_o)
                         else :
-                            qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions, otherchoice = other_o)
+                            qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
                     
                     elif qtype == 'opinion_scale' :
                         qoptions = self._get_opinion_options(gidx=gidx, qid=qid, qidx=qidx_ing)
                         # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
-                        qvalues = self._get_opinion_size(gidx=gidx, qid=qid, qidx=qidx_ing) 
+                        qvalues = self._get_opinion_size(gidx=gidx, qid=qid, qidx=qidx_ing)
+
+                    elif qtype == 'rating' :
+                        qoptions = self._set_rating_values(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
+                        qvalues = self._get_rating_values(qname=qtitle, qlabels=qoptions)
 
                     else :
                         print("Question type not found in function. There must be another way, or you'll have to modify code...")
@@ -264,17 +269,77 @@ class tf_struct :
                     # print(qtype)
                     if qtype in ['dropdown', 'yes_no'] :
                         qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
+
+
                     elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
                         multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
                         if not multiple_c :
                             qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
                         else :
                             qvalues = self._get_df_multiplechoice_qvalue (rlabel=label, isnot=isnot)
-                            
-                            return
-                    break
+                    
+                    else :
+
+                        int_label = int(label)
+
+                        if qtype in ['opinion_scale', 'rating' ] :
+                            qvalues = self.form_results[self.form_results[qtitle] == int_label]
+
+                        else :
+                            print ('Unknown question type')
+
 
         return qvalues
+
+
+    
+
+    # Retourne le dataframe des repondant pour une question donnee et une reponse attendue
+    def get_sub_question_specific_dtf(self, gidx=-1, qid='', inputdtf = None) :
+        qidx_ing = 0
+        if qid == '' :
+            print('Please give question id.')
+            return
+        if gidx == -1 :
+            print('Please give group idex.')
+            return
+        if inputdtf is None :
+            print('Please give inputdtf or use get_question_specific_resp_dtf().')
+            return
+        else :
+            group_questions = self.form_fields[gidx]['properties']['fields']
+
+            for i in range(len(group_questions)) :
+                if group_questions[i]['id'] == qid :
+                    qidx_ing = i
+                    qtitle = group_questions[i]['title']
+                    # print(qtitle)
+                    qtype = group_questions[i]['type']
+                    # print(qtype)
+
+                    if qtype == 'dropdown' :
+                        qoptions = self._get_dp_options(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        qvalues = self._get_subdf_dp_values (qname=qtitle, qlabels=qoptions, inputdtf=inputdtf)
+
+
+                    elif qtype == 'yes_no' :
+                        qoptions = ['oui', 'non']
+                        qvalues = self._get_subdf_yn_values(qname=qtitle, inputdtf=inputdtf)
+
+
+                    elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
+                        multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
+                        other_o = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_other_choice']
+                        qoptions = self._get_pc_ou_mc_options(gidx=gidx, qid=qid, qidx=qidx_ing, multiplec = multiple_c, otherchoice = other_o)                       
+
+                        if not multiple_c :
+                            qvalues = self._get_subdf_sc_pc_mc_values(qname=qtitle, qlabels=qoptions, otherchoice = other_o, inputdtf=inputdtf)
+                        else :
+                            qvalues = self._get_subdtf_multiple_pc_mc_values(qname=qtitle, qlabels=qoptions, inputdtf=inputdtf)
+
+                    break
+
+        return qtitle, qoptions, qvalues
 
 
     # Get mean number of item selected for a multiple choice
@@ -335,6 +400,16 @@ class tf_struct :
             dp_values.append(df_res)
         return dp_values
 
+    # get dropdown values
+    # returns number of hit for each label of dropdown
+    def _get_subdf_dp_values(self, qname='', qlabels = [], inputdtf = None) :
+        dp_values = []
+        for i in range(len(qlabels)) :
+            df_res = inputdtf[inputdtf[qname]==qlabels[i]]
+            # print(str(df_res.shape[0]))
+            dp_values.append(df_res)
+        return dp_values
+
 
     # get yes_no values
     # returns dataframe of yes and dataframe of no
@@ -342,6 +417,17 @@ class tf_struct :
         dp_values = []
         df_res_y = self.form_results[self.form_results[qname]==1]
         df_res_n = self.form_results[self.form_results[qname]==0]
+        dp_values.append(df_res_y)
+        dp_values.append(df_res_n)
+        return dp_values
+
+
+    # get yes_no values
+    # returns dataframe of yes and dataframe of no (results are 1 or 0)
+    def _get_subdf_yn_values(self, qname='', inputdtf = None) :
+        dp_values = []
+        df_res_y = inputdtf[inputdtf[qname]==1]
+        df_res_n = inputdtf[inputdtf[qname]==0]
         dp_values.append(df_res_y)
         dp_values.append(df_res_n)
         return dp_values
@@ -417,6 +503,28 @@ class tf_struct :
         return dp_values
 
 
+    #-----------------------------------------------------------------
+    # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = False
+    # return data frames associated to each possible choice
+    def _get_subdf_sc_pc_mc_values(self, qname='', qlabels = [],  otherchoice = False, inputdtf = None) :
+        dp_values = []
+        lastcolname = 'Neposezjamaisunequestionsouslaformeduneaffirmationonrisqueraitdelaprendrepouruneprescription'
+        # If other choice, get colomn last name
+        if otherchoice :
+            lastcolname = qlabels[-1]
+        for i in range(len(qlabels)) :
+            # Verifier que le qlabel ne contienne pas Other ou Other.
+            if qlabels[i] != lastcolname :
+                df_res = inputdtf[inputdtf[qname]==qlabels[i]]
+                dp_values.append(df_res)
+            else :
+                #print ('POOOOO')
+                df_res = inputdtf[inputdtf[lastcolname].notnull()]
+                dp_values.append(df_res)
+
+        return dp_values
+
+
 
     #-----------------------------------------------------------------
     # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = True
@@ -432,6 +540,20 @@ class tf_struct :
 
         return dp_values
 
+    #-----------------------------------------------------------------
+    # PICTURE CHOICES  or MULTIPLE CHOICES - multiple choices = True
+    # return data frames associated to each possible choice
+    def _get_subdtf_multiple_pc_mc_values(self, qname='', qlabels = [], inputdtf = None) :
+        dp_values = []
+
+        for i in range(len(qlabels)) :
+            for col in inputdtf.columns :
+                if col == qlabels[i]:
+                    dft = inputdtf[inputdtf[qlabels[i]]==qlabels[i]]
+                    dp_values.append(dft)
+
+        return dp_values
+
 
 
     # Retourne les labels de min et max de l'opinion
@@ -441,6 +563,27 @@ class tf_struct :
         labels = [choices['left'], choices['right']]
 
         return labels
+
+
+    # Retourne les labels de min et max de l'opinion
+    def _set_rating_values(self, gidx=-1, qid='', qidx=-1) :
+        l_res = []
+        size = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['steps']
+        labels = [*range(1,size+1,1)]
+        return labels
+
+
+    # Retourne les labels de min et max de l'opinion
+    def _get_rating_values(self, qname='', qlabels = []) :
+        dp_values = []
+        lastcolname = 'Neposezjamaisunequestionsouslaformeduneaffirmationonrisqueraitdelaprendrepouruneprescription'
+    
+        for i in range(len(qlabels)) :
+            df_res = self.form_results[self.form_results[qname]==qlabels[i]]
+            dp_values.append(df_res)
+
+        return dp_values
+
 
     # Retourne les labels de min et max de l'opinion
     def _get_opinion_size(self, gidx=-1, qid='', qidx=-1) :
@@ -465,6 +608,7 @@ class tf_struct :
         else :
             df_res = self.form_results[self.form_results[qname]!=rlabel]
         return df_res
+
 
     # reourne le dataframe associe a une reponse attendue
     def _get_df_multiplechoice_qvalue(self, rlabel = '', isnot = False) :
