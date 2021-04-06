@@ -144,6 +144,7 @@ class tf_struct :
     def get_results(self, gidx=-1, qid='') :
         qoptions = []
         qvalues = []
+        qtitle = ''
         qidx_ing = 0
         if qid == '' :
             print('Please give question id.')
