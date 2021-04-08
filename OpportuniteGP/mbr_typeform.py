@@ -54,10 +54,13 @@ def clean_lists_multiplechoices_histogramme(labels = [], values = [], nbreps = 1
 def df_singlecolumn_subresults(main_dtf=[], l_options = [], q_name='') :
     labels = []
     dtfs = []
-    for i in range(len(l_options)) :
-        dftemp = main_dtf[main_dtf[q_name]==l_options[i]]
-        dtfs.append(dftemp)
-        labels.append(l_options[i])
+    if main_dtf is not None :
+        for i in range(len(l_options)) :
+            dftemp = main_dtf[main_dtf[q_name]==l_options[i]]
+            dtfs.append(dftemp)
+            labels.append(l_options[i])
+    else :
+        print('No result found for '+q_name)
     return labels, dtfs
 
 
