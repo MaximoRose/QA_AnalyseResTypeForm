@@ -560,14 +560,7 @@ class tf_struct :
 
 
 
-    # Retourne les labels de min et max de l'opinion
-    def _get_opinion_options(self, gidx=-1, qid='', qidx=-1) :
-        choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['labels']
-
-        labels = [choices['left'], choices['right']]
-
-        return labels
-
+    
 
     # Retourne les labels de min et max de l'opinion
     def _set_rating_values(self, gidx=-1, qid='', qidx=-1) :
@@ -587,6 +580,17 @@ class tf_struct :
             dp_values.append(df_res)
 
         return dp_values
+
+
+
+    # Retourne les labels de min et max de l'opinion
+    def _get_opinion_options(self, gidx=-1, qid='', qidx=-1) :
+        choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['labels']
+
+        labels = [choices['left'], choices['right']]
+
+        return labels
+
 
 
     # Retourne les labels de min et max de l'opinion
