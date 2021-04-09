@@ -23,10 +23,16 @@ To have this info, you can access the API of your form at URL : https://api.type
 Or you can use the "mbr_typeform.dump_tform_structure()" function to dump the structure into a .json file in the "forms" folder
 
 __Example :__
+
 import mbr_typeform as mbr
+
 tfs = mbr.tf_struct(formid='yourid')
+
 struct_d = tfs.get_form_structure()
+
 tfs.dump_tform_structure()
+
+
 
 This way you can get the id of any of your question.
 
