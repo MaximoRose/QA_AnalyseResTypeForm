@@ -198,6 +198,10 @@ class tf_struct :
                         # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
                         qvalues = self._get_rating_values(qname=qtitle, qlabels=qoptions)
 
+                    elif qtype == 'long_text' :
+                        qoptions.append('Free speech')
+                        qvalues = self._get_longtext_values(qname=qtitle)
+
                     else :
                         print("Question type not found in function. There must be another way, or you'll have to modify code...")
 
@@ -282,6 +286,9 @@ class tf_struct :
                         else :
                             qvalues = self._get_df_multiplechoice_qvalue (rlabel=label, isnot=isnot)
                     
+                    # elif qtype == 'long_text' : 
+
+
                     else :
 
                         int_label = int(label)
@@ -500,7 +507,7 @@ class tf_struct :
                 df_res = self.form_results[self.form_results[qname]==qlabels[i]]
                 dp_values.append(df_res)
             else :
-                print ('POOOOO')
+                #print ('POOOOO')
                 df_res = self.form_results[self.form_results[lastcolname].notnull()]
                 dp_values.append(df_res)
 
@@ -603,6 +610,14 @@ class tf_struct :
         else :
             l_res = [*range(0,size,1)]
         return l_res
+
+
+    def _get_longtext_values(self, qname='') :
+        res = []
+        df_res = self.form_results[self.form_results[qname].notnull()]
+        res.append(df_res)
+
+        return res
 
 
     # Get SINGLE DATAFRAME : One option for one question
