@@ -9,63 +9,6 @@ import pandas as pd
 
 
 ###############################################################################################################################
-# Fonction permettant de nettoyer les resultats pour des graphs un peu plus agreable
-# + Quelques fonctions de traitement des dataset en fonction de parametre de formulaires
-###############################################################################################################################
-
-# Elimine les options qui n'ont jamais ete selectionnees pour dropdowns et autre signe choices
-# label est la liste des options possibles pour une questions
-# Values correspond au dataframe associe
-def clean_lists_for_cheesepie(labels = [], values = []) :
-    clean_labels = []
-    clean_values = []
-    if len(labels) != len(values) :
-        print('labels and values are not the same size')
-    elif len(labels) == 0 :
-        print('no results found')
-    else :
-        for i in range(len(labels)) :
-            if values[i].shape[0] != 0 :
-                clean_labels.append(labels[i])
-                clean_values.append(values[i].shape[0])
-    return clean_labels, clean_values
-
-
-# Elimine les options qui n'ont jamais ete selectionnees pour multiple choices
-# label est la liste des options possibles pour une questions
-# Values correspond au dataframe associe
-# nnbreps est le nombre de repondants du questionnaire, ou la totalite sur laquelle on veut faire les taux
-def clean_lists_multiplechoices_histogramme(labels = [], values = [], nbreps = 1) :
-    clean_labels = []
-    clean_values = []
-    if len(labels) != len(values) :
-        print('labels and values are not the same size')
-    elif len(labels) == 0 :
-        print('no results found')
-    else :
-        for i in range(len(labels)) :
-            clean_labels.append(labels[i])
-            clean_values.append(values[i].shape[0])
-    return clean_labels, clean_values
-
-
-# Recupere les dataframes associe a chaque valeur possible d'une colonne de sinngle choice
-# get subresults of dataframe based on single columns values
-def df_singlecolumn_subresults(main_dtf=[], l_options = [], q_name='') :
-    labels = []
-    dtfs = []
-    if main_dtf is not None :
-        for i in range(len(l_options)) :
-            dftemp = main_dtf[main_dtf[q_name]==l_options[i]]
-            dtfs.append(dftemp)
-            labels.append(l_options[i])
-    else :
-        print('No result found for '+q_name)
-    return labels, dtfs
-
-
-
-###############################################################################################################################
 # Class tf_struct is more that a struct
 # It gives all the functions needed to cross-analyze form structure (given by API) and form results (dropped as CSV)
 ###############################################################################################################################
@@ -189,12 +132,12 @@ class tf_struct :
                             qvalues = self._get_multiple_pc_ou_mc_values (qname=qtitle, qlabels=qoptions)
                     
                     elif qtype == 'opinion_scale' :
-                        qoptions = self._get_opinion_options(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        qoptions = self._get_opinion_options(gidx=gidx, qidx=qidx_ing)
                         # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
-                        qvalues = self._get_opinion_size(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        qvalues = self._get_opinion_dtfs(qname=qtitle, qlabels=qoptions)
 
                     elif qtype == 'rating' :
-                        qoptions = self._set_rating_values(gidx=gidx, qid=qid, qidx=qidx_ing)
+                        qoptions = self._set_rating_values(gidx=gidx, qidx=qidx_ing)
                         # Dans le cas de l'opinion, les resultats retournes ne sont pas les resultats mais la taille de l'echelle
                         qvalues = self._get_rating_values(qname=qtitle, qlabels=qoptions)
 
@@ -351,36 +294,6 @@ class tf_struct :
                     break
 
         return qtitle, qoptions, qvalues
-
-
-    # Get mean number of item selected for a multiple choice
-    #-----------------------------------------------------------------------------------------------------------------------
-    # Fonctions pour ne recuperer qu'un seul dataframe, celui de reponses a une question specifique
-    # get dropdown values
-    # returns number of hit for each label of dropdown
-    def get_meanNbItem_in_multipleChoice(self, possiblechoices = [], label_expt = 'Howmuchwoodwouldawoodchuckchuckifawoodchuckcouldchuckwood') :
-        list_res = []
-        meanV = 0.0
-        nb_excpt = 0
-        if possiblechoices == [] :
-            print('Liste of options empty')
-            return
-        else :
-            df = self.form_results
-            for index, row in df.iterrows():
-                nb_opt = 0
-                for i in range(len(possiblechoices)) :
-                    if row[possiblechoices[i]] == possiblechoices[i] :
-                        if row[possiblechoices[i]] != label_expt :
-                            nb_opt += 1
-                        else : 
-                            nb_excpt += 1
-                list_res.append(nb_opt)
-            total = (len(list_res) + nb_excpt)
-            seum = sum(list_res)
-            meanV = seum / total
-
-        return meanV
 
 
 
@@ -580,8 +493,7 @@ class tf_struct :
     # Retourne les labels de min et max de l'opinion
     def _get_rating_values(self, qname='', qlabels = []) :
         dp_values = []
-        lastcolname = 'Neposezjamaisunequestionsouslaformeduneaffirmationonrisqueraitdelaprendrepouruneprescription'
-    
+        
         for i in range(len(qlabels)) :
             df_res = self.form_results[self.form_results[qname]==qlabels[i]]
             dp_values.append(df_res)
@@ -591,17 +503,7 @@ class tf_struct :
 
 
     # Retourne les labels de min et max de l'opinion
-    def _get_opinion_options(self, gidx=-1, qid='', qidx=-1) :
-        choices = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['labels']
-
-        labels = [choices['left'], choices['right']]
-
-        return labels
-
-
-
-    # Retourne les labels de min et max de l'opinion
-    def _get_opinion_size(self, gidx=-1, qid='', qidx=-1) :
+    def _get_opinion_options(self, gidx=-1, qidx=-1) :
         l_res = []
         size = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['steps']
         startone = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['start_at_one']
@@ -609,7 +511,20 @@ class tf_struct :
             l_res = [*range(1,size,1)]
         else :
             l_res = [*range(0,size,1)]
+
         return l_res
+
+
+
+    # Retourne les labels de min et max de l'opinion
+    def _get_opinion_dtfs(self, qname='', qlabels = []) :
+        dp_values = []
+
+        for i in range(len(qlabels)) :
+            df_res = self.form_results[self.form_results[qname]==qlabels[i]]
+            dp_values.append(df_res)
+   
+        return dp_values
 
 
     def _get_longtext_values(self, qname='') :
