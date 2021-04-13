@@ -34,6 +34,64 @@ def somme_response(liste_dtfs = []) :
     return sumresp
 
 
+def print_moyennes_xresults_mbarchart(df_xplot, listofnotes = []) :
+    labels = []
+    moyennes = []
+    for i, row in df_xplot.iterrows():
+        idata = row['dtfs_xlbl_values']
+        ilabel = row['legend']
+        labels.append(ilabel)
+        itotalnote = 0
+        if len(idata) == len(listofnotes) : 
+            for i in range(len(listofnotes)) : 
+                itotalnote += row['dtfs_xlbl_values'][i]*listofnotes[i]
+            nb_reps = sum(row['dtfs_xlbl_values'])
+            moyenne = itotalnote / nb_reps
+            moyennes.append(moyenne)
+            print("Moyenne '"+ ilabel +"' = "+ str(moyenne))
+        else : 
+            print("dtfs_xlbl_values does not have the same length as list of notes")
+
+    data = {"labels" : labels, "moyenne" : moyennes}
+        
+    return data
+
+def faire_deux_groupes(groupe1_indexs = [], input_dtf_list = []) :
+    
+    if len(groupe1_indexs) > 0 :
+        group2 = input_dtf_list
+        df_init = False
+        for i in range(len(groupe1_indexs)) :
+            if groupe1_indexs[i] < len(input_dtf_list) :
+                print("groupe 1 - "+ str(groupe1_indexs[i]))
+                if not df_init :
+                    group1_df = input_dtf_list[i]
+                    df_init = True
+                else :
+                    group1_df = group1_df.append(input_dtf_list[groupe1_indexs[i]])
+                    
+                group2.pop(i)
+
+
+            else :
+                print("Your indexs must be smaller than the lentgh of the dtf list")
+
+        df_init = False
+        for i in range(len(group2)) :
+            if not df_init :
+                group2_df = group2[i]
+                df_init = True
+            else :
+                print("Appending")
+                group2_df = group2_df.append(group2[i])
+
+    res = [group1_df, group2_df]
+    return res
+
+
+
+
+
 class plots_mbr_tf :
 
     def __init__(self, pie_colors=['#f2cb26', '#00a154', '#0083c6', '#dc0036', '#fc8934', '#99248B', '#fb85a7', '#00b3f0'], pie_faveclat = 0.005, pie_titlesize = 14, bar_ticksize = 12, bar_titlesize = 16, bar_axislabelsize = 14, bar_patchsize = 13, pie_autopct='%1.1f%%', pie_figsize =(10, 7), bar_xlbl_rotation = 50, mbar_figsize = (15,9)):
@@ -269,10 +327,13 @@ class plots_mbr_tf :
         for i, row in cln_df.iterrows():
 
             idata = row['dtfs_xlbl_values']
-            
+            nb_reps = sum(row['dtfs_xlbl_values'])
             X_axis = np.arange(len(xlist_labels))
             
-            plt.bar(X_axis + barvar[i], idata, bar_width, label = row['legend'], color = self.pie_colors[cnt])
+            if len(legends) < len(self.pie_colors) :
+                plt.bar(X_axis + barvar[i], idata, bar_width, label = row['legend'] + ' (' + str(nb_reps) + ')', color = self.pie_colors[cnt])
+            else : 
+                plt.bar(X_axis + barvar[i], idata, bar_width, label = row['legend'] + ' (' + str(nb_reps) + ')')
 
             cnt += 1
             #barvar = 0-barvar
@@ -284,4 +345,6 @@ class plots_mbr_tf :
         plt.legend()
         plt.show()
 
-        return
+        return cln_df
+
+    
