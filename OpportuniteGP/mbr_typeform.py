@@ -199,57 +199,31 @@ class tf_struct :
         return qtype
     
 
+    # Recupere les sous reponses d'une liste de dataframes passee en paramaetres
+    def get_sub_reponses (self, subq_gidx=-1, subq_qid='', inputdtfs = []) :
+        qname = ''
+        qvalues = []
+        qlabels = []
 
-    # Retourne le dataframe des repondant pour une question donnee et une reponse attendue
-    def get_question_specific_resp_dtf(self, gidx=-1, qid='', label ='', isnot = False) :
-        qidx_ing = 0
-        if qid == '' :
-            print('Please give question id.')
-            return
-        if gidx == -1 :
-            print('Please give group idex.')
-            return
+        if len(inputdtfs) > 0 :
+            for i in range(len(inputdtfs)) :
+                qname, qlabels, qdtf = self.get_sub_question_data(gidx=subq_gidx, qid=subq_qid, inputdtf = inputdtfs[i])
+                # print("dtf "+ str(i) + " is length "+ str(len(qdtf)))
+                qvalues.append(qdtf)
+                # strdtflgth = ''
+                # for k in range(len(qdtf)) :
+                #     strdtflgth += str(qdtf[k].shape[0]) +', '
+                # print('dtfs sizes = '+ strdtflgth)
+
         else :
-            group_questions = self.form_fields[gidx]['properties']['fields']
-            for i in range(len(group_questions)) :
-                if group_questions[i]['id'] == qid :
-                    qidx_ing = i
-                    qtitle = group_questions[i]['title']
-                    # print(qtitle)
-                    qtype = group_questions[i]['type']
-                    # print(qtype)
-                    if qtype in ['dropdown', 'yes_no'] :
-                        qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
+            print('Gibme list of inputdtfs')
+        
+        
+        return qname, qlabels, qvalues
 
-
-                    elif qtype == 'picture_choice' or qtype == 'multiple_choice' :
-                        multiple_c = self.form_fields[gidx]['properties']['fields'][qidx_ing]['properties']['allow_multiple_selection']
-                        if not multiple_c :
-                            qvalues = self._get_df_singlechoice_qvalue (qname=qtitle, rlabel=label, isnot=isnot)
-                        else :
-                            qvalues = self._get_df_multiplechoice_qvalue (rlabel=label, isnot=isnot)
-                    
-                    # elif qtype == 'long_text' : 
-
-
-                    else :
-
-                        int_label = int(label)
-
-                        if qtype in ['opinion_scale', 'rating' ] :
-                            qvalues = self.form_results[self.form_results[qtitle] == int_label]
-
-                        else :
-                            print ('Unknown question type')
-
-
-        return qvalues
-
-
-    
 
     # Retourne le dataframe des repondant pour une question donnee et une reponse attendue
-    def get_sub_question_specific_dtf(self, gidx=-1, qid='', inputdtf = None) :
+    def get_sub_question_data(self, gidx=-1, qid='', inputdtf = None) :
         qidx_ing = 0
         if qid == '' :
             print('Please give question id.')
@@ -258,7 +232,7 @@ class tf_struct :
             print('Please give group idex.')
             return
         if inputdtf is None :
-            print('Please give inputdtf or use get_question_specific_resp_dtf().')
+            print('Please give inputdtf (dataframe of the parent question)')
             return
         else :
             group_questions = self.form_fields[gidx]['properties']['fields']
@@ -290,6 +264,25 @@ class tf_struct :
                             qvalues = self._get_subdf_sc_pc_mc_values(qname=qtitle, qlabels=qoptions, otherchoice = other_o, inputdtf=inputdtf)
                         else :
                             qvalues = self._get_subdtf_multiple_pc_mc_values(qname=qtitle, qlabels=qoptions, inputdtf=inputdtf)
+
+
+
+                    elif qtype == 'opinion_scale' :
+                        qoptions = self._get_opinion_options(gidx=gidx, qidx=qidx_ing)
+                        qvalues = self._get_sub_opinion_dtfs(qname=qtitle, qlabels=qoptions, inputdtf=inputdtf)
+
+                    elif qtype == 'rating' :
+                        qoptions = self._set_rating_values(gidx=gidx, qidx=qidx_ing)
+                        qvalues = self._get_sub_rating_values(qname=qtitle, qlabels=qoptions, inputdtf=inputdtf)
+
+                    elif qtype == 'long_text' :
+                        qoptions.append('Free speech')
+                        qvalues = self._get_longtext_values(qname=qtitle)
+
+                    else :
+                        print("Question type not found in function. There must be another way, or you'll have to modify code...")
+
+                    break
 
                     break
 
@@ -482,7 +475,7 @@ class tf_struct :
 
     
 
-    # Retourne les labels de min et max de l'opinion
+    # Retourne les valeurs possible de la notation
     def _set_rating_values(self, gidx=-1, qid='', qidx=-1) :
         l_res = []
         size = self.form_fields[gidx]['properties']['fields'][qidx]['properties']['steps']
@@ -490,12 +483,22 @@ class tf_struct :
         return labels
 
 
-    # Retourne les labels de min et max de l'opinion
+    # Retourne les dataframe associes a chaque note
     def _get_rating_values(self, qname='', qlabels = []) :
         dp_values = []
         
         for i in range(len(qlabels)) :
             df_res = self.form_results[self.form_results[qname]==qlabels[i]]
+            dp_values.append(df_res)
+
+        return dp_values
+
+    # Retourne les dataframe associes a chaque note, au sein du dataframe passe en parametre
+    def _get_sub_rating_values(self, qname='', qlabels = [], inputdtf = None) :
+        dp_values = []
+        
+        for i in range(len(qlabels)) :
+            df_res = inputdtf[inputdtf[qname]==qlabels[i]]
             dp_values.append(df_res)
 
         return dp_values
@@ -526,6 +529,18 @@ class tf_struct :
    
         return dp_values
 
+    # Retourne les dataframe associes a chaque note, au sein du dataframe passe en parametre
+    def _get_sub_opinion_dtfs(self, qname='', qlabels = [], inputdtf = None) :
+        dp_values = []
+
+        if inputdtf.shape[0] > 0 :
+            for i in range(len(qlabels)) :
+                df_res = inputdtf[inputdtf[qname]==qlabels[i]]
+                dp_values.append(df_res)
+        else :
+            print("Input dtf in sub_opinion_dtfs is None")
+        return dp_values
+
 
     def _get_longtext_values(self, qname='') :
         res = []
@@ -534,27 +549,12 @@ class tf_struct :
 
         return res
 
+    def _get_sub_longtext_values(self, qname='', inputdtf = None) :
+        res = []
+        df_res = inputdtf[inputdtf.notnull()]
+        res.append(df_res)
 
-    # Get SINGLE DATAFRAME : One option for one question
-    #-----------------------------------------------------------------------------------------------------------------------
-    # Fonctions pour ne recuperer qu'un seul dataframe, celui de reponses a une question specifique
-    # get dropdown values
-    # returns number of hit for each label of dropdown
-    def _get_df_singlechoice_qvalue(self, qname='', rlabel = '', isnot = False) :
-        if not isnot :
-            df_res = self.form_results[self.form_results[qname]==rlabel]
-        else :
-            df_res = self.form_results[self.form_results[qname]!=rlabel]
-        return df_res
-
-
-    # reourne le dataframe associe a une reponse attendue
-    def _get_df_multiplechoice_qvalue(self, rlabel = '', isnot = False) :
-        if not isnot :
-            df_res = self.form_results[self.form_results[rlabel]==rlabel]
-        else :
-            df_res = self.form_results[self.form_results[rlabel]!=rlabel]
-        return df_res
+        return res
 
 
 
