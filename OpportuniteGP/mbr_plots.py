@@ -63,7 +63,7 @@ def faire_deux_groupes(groupe1_indexs = [], input_dtf_list = []) :
         df_init = False
         for i in range(len(groupe1_indexs)) :
             if groupe1_indexs[i] < len(input_dtf_list) :
-                print("groupe 1 - "+ str(groupe1_indexs[i]))
+                # print("groupe 1 - "+ str(groupe1_indexs[i]))
                 if not df_init :
                     group1_df = input_dtf_list[i]
                     df_init = True
@@ -82,7 +82,7 @@ def faire_deux_groupes(groupe1_indexs = [], input_dtf_list = []) :
                 group2_df = group2[i]
                 df_init = True
             else :
-                print("Appending")
+                # print("Appending")
                 group2_df = group2_df.append(group2[i])
 
     res = [group1_df, group2_df]
@@ -346,5 +346,7 @@ class plots_mbr_tf :
         plt.show()
 
         return cln_df
+
+
 
     

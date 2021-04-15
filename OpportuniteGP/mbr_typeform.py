@@ -537,8 +537,8 @@ class tf_struct :
             for i in range(len(qlabels)) :
                 df_res = inputdtf[inputdtf[qname]==qlabels[i]]
                 dp_values.append(df_res)
-        else :
-            print("Input dtf in sub_opinion_dtfs is None")
+        # else :
+        #     print("Some sub opinion is None")
         return dp_values
 
 
@@ -557,6 +557,18 @@ class tf_struct :
         return res
 
 
+
+    #-----------------------------------------------------------------
+    # FONCTIONS DE CROSS RESULTS
+    def get_x_res(self, gidx1 = -1, qid1=-1, gidx2=-1, qid2=-1) :
+        q1_name, q1_lbls, q1_dtfs = self.get_results(gidx=gidx1,qid=qid1)
+        q2_name, q2_lbls, q2_dtfs = self.get_sub_reponses(subq_gidx=gidx2, subq_qid=qid2, inputdtfs = q1_dtfs) 
+        # Rappel des options :
+        print(q1_name + ":\n ",q1_lbls)
+        # Rappel des options :
+        print(q2_name + ":\n ",q2_lbls)
+
+        return q1_name, q1_lbls, q1_dtfs, q2_name, q2_lbls, q2_dtfs
 
 
     #-----------------------------------------------------------------
