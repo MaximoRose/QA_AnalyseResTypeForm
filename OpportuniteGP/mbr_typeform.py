@@ -13,29 +13,40 @@ import pandas as pd
 # It gives all the functions needed to cross-analyze form structure (given by API) and form results (dropped as CSV)
 ###############################################################################################################################
 
-class tf_struct :
+class mbr_typeFrom :
 
     def __init__(self, formid=''):
         self.formid = formid
-        self.form_structure = None
-        self.form_fields = None
-        self.form_results = None
+        if formid != '' :
+            # Recupere toute la structure du questionnaire que retoune l'API
+            self.form_structure = self.get_form_structure(formid = formid)
+            # Recupere le titre du questionnaire
+            self.form_title = self.get_form_title()
+            # Recupere seulement les champs associes aux questions
+            self.form_fields = self.get_form_fields()
+            # Recupere le fichier de reponse dans le dossier 'responses'. Le fichier doit etre nomme "res_{id questionnaire}.csv"
+            self.form_results = self.get_form_responses()
+            # Retourne et ecrit les groupes definis dans le questionnaire
+            self.form_groups = self.get_form_groups()
+        else :
+            self.form_structure = None
+            self.form_title = None
+            self.form_fields = None
+            self.form_results = None
+            self.form_groups = None
 
 
     # Call typeform API to get Form's structure
-    def get_form_structure (self):
-        if self.formid == '' : 
-            print("Don't be ridiculous. Gibme a form ID")
-        else :
-            url = 'https://api.typeform.com/forms/'+self.formid
-            json_url = requests.get(url)
-            data = json.loads(json_url.text)
-            self.form_structure = data
+    def get_form_structure (self, formid=''):
+        url = 'https://api.typeform.com/forms/'+formid
+        json_url = requests.get(url)
+        data = json.loads(json_url.text)
+        self.form_structure = data
         return data
 
 
     # Retourne le titre du formulaire
-    def get_title(self) :
+    def get_form_title(self) :
         try :
             formtitle = self.form_structure['title']
         except  KeyError :
@@ -44,7 +55,7 @@ class tf_struct :
 
 
     # Retourne l'ensemble des questions
-    def get_fields(self) :
+    def get_form_fields(self) :
         try :
             formfields = self.form_structure['fields']
             self.form_fields = formfields
@@ -69,7 +80,7 @@ class tf_struct :
 
 
     # Retourne les groupes trouves dans le formulaire
-    def get_groups(self) :
+    def get_form_groups(self) :
         formgroups = []
         try :
             fields = self.form_structure['fields']

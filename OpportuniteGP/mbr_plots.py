@@ -94,6 +94,27 @@ def faire_deux_groupes(groupe1_indexs = [], input_dtf_list = []) :
 
 class plots_mbr_tf :
 
+    # # Liste de couleurs preferees
+    # myfavcolors = ['#f2cb26', '#00a154', '#0083c6', '#dc0036', '#fc8934', '#99248B', '#fb85a7', '#00b3f0']
+    # # Eclatement prefere pour les pie charts
+    # pie_fav_eclat = 0.005
+    # # Pie charts title
+    # pie_titlesize = 14
+    # # Pie display percentage with one decimal
+    # pie_autopct = '%1.1f%%'
+    # # Set default pie chart size
+    # pie_figsize =(10, 7)
+    # # Tick size pour les barcharts
+    # bar_ticksize = 12
+    # # Title size pour les barcharts
+    # bar_titlesize = 16
+    # # Axis label size pour les barcharts
+    # bar_axislabelsize = 14
+    # # Patch number size pour les barcharts
+    # bar_patchsize = 13
+    # # Mettre le label des abscisses en diagonale
+    # bar_xlbl_rotation = 50
+
     def __init__(self, pie_colors=['#f2cb26', '#00a154', '#0083c6', '#dc0036', '#fc8934', '#99248B', '#fb85a7', '#00b3f0'], pie_faveclat = 0.005, pie_titlesize = 14, bar_ticksize = 12, bar_titlesize = 16, bar_axislabelsize = 14, bar_patchsize = 13, pie_autopct='%1.1f%%', pie_figsize =(10, 7), bar_xlbl_rotation = 50, mbar_figsize = (15,9)):
         self.pie_colors = pie_colors
         self.pie_faveclat = pie_faveclat
