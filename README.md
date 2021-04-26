@@ -1,4 +1,22 @@
 # English
+I've made a code easy to use in Jupyter NoteBook to produce graphs of your TypeForm.
+
+The point is to avoid making a spreadsheets everytime I export my results, as I can export them multiple times for a single Form, just because I'm impatient to see the tendencies.
+
+Another personnal goal is to avoid using Google spreadsheet, eventhough it's a good product, I'm trying to degooglize myself. If you also start using this code, you can say, you engage with open source ;)
+
+
+
+
+N.B : 
+
+1. Pour les questions a choix unique on ne fait que des camemberts.
+1. Pour les questions a choix multiple, opinion scale, ratings, on fait des barcharts
+
+Quand on fera des croisements on sera plus original, on aura des teckels et des chihuahua degeneres
+
+
+
 # QA_AnalyseResTypeForm
 Code to analyze responses to a TypeForm Form
 
