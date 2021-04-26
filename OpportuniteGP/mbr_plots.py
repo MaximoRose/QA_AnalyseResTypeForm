@@ -9,6 +9,9 @@ import seaborn as sns
 import numpy as np
 import plotly.graph_objects as px
 
+# i;port json pour config graphique
+import json
+
 # Retourne la moyenne generale d'une opinion ou d'un rating
 def moyenne_generale_note (liste_notes = [], liste_dtfs = [], nbresp = 1) :
     moyenne = 0.0
@@ -94,40 +97,88 @@ def faire_deux_groupes(groupe1_indexs = [], input_dtf_list = []) :
 
 class plots_mbr_tf :
 
-    # # Liste de couleurs preferees
-    # myfavcolors = ['#f2cb26', '#00a154', '#0083c6', '#dc0036', '#fc8934', '#99248B', '#fb85a7', '#00b3f0']
-    # # Eclatement prefere pour les pie charts
-    # pie_fav_eclat = 0.005
-    # # Pie charts title
-    # pie_titlesize = 14
-    # # Pie display percentage with one decimal
-    # pie_autopct = '%1.1f%%'
-    # # Set default pie chart size
-    # pie_figsize =(10, 7)
-    # # Tick size pour les barcharts
-    # bar_ticksize = 12
-    # # Title size pour les barcharts
-    # bar_titlesize = 16
-    # # Axis label size pour les barcharts
-    # bar_axislabelsize = 14
-    # # Patch number size pour les barcharts
-    # bar_patchsize = 13
-    # # Mettre le label des abscisses en diagonale
-    # bar_xlbl_rotation = 50
+    # Initialise mes parametres graphiques preferes contenu dans le fichier de config graphique
+    def __init__(self, config_file = "./config/graphs_param.json"):
+        json_settings = self.get_paramfile(config_file)
+        try :
+            self.pie_colors = json_settings["myfavcolors"]
+        except KeyError :
+            print("Could not find list of pie_colors in graph param file, setting default ...")
+            self.pie_colors = ["#f2cb26", "#00a154", "#0083c6", "#dc0036", "#fc8934", "#99248B", "#fb85a7", "#00b3f0"]
 
-    def __init__(self, pie_colors=['#f2cb26', '#00a154', '#0083c6', '#dc0036', '#fc8934', '#99248B', '#fb85a7', '#00b3f0'], pie_faveclat = 0.005, pie_titlesize = 14, bar_ticksize = 12, bar_titlesize = 16, bar_axislabelsize = 14, bar_patchsize = 13, pie_autopct='%1.1f%%', pie_figsize =(10, 7), bar_xlbl_rotation = 50, mbar_figsize = (15,9)):
-        self.pie_colors = pie_colors
-        self.pie_faveclat = pie_faveclat
-        self.pie_titlesize = pie_titlesize
-        self.pie_autopct = pie_autopct
-        self.pie_figsize = pie_figsize
-        self.bar_ticksize = bar_ticksize
-        self.bar_titlesize = bar_titlesize
-        self.bar_axislabelsize = bar_axislabelsize
-        self.bar_patchsize = bar_patchsize
-        self.bar_xlbl_rotation = bar_xlbl_rotation
-        self.mbar_figsize = mbar_figsize
+        try :
+            self.pie_faveclat = json_settings["pie_fav_eclat"]
+        except KeyError :
+            print("Could not find pie_faveclat in graph param file, setting default ...")
+            self.pie_faveclat = 0.005
+
+        try :
+            self.pie_titlesize = json_settings["pie_titlesize"]
+        except KeyError :
+            print("Could not find pie_titlesize in graph param file, setting default ...")
+            self.pie_titlesize = 14
+
+        try :    
+            self.pie_autopct = json_settings["pie_autopct"]
+        except KeyError :
+            print("Could not find pie_autopct in graph param file, setting default ...")
+            self.pie_autopct = '%1.1f%%'
+
+        try :
+            piefigsizex = json_settings["pie_figsize_x"]
+            piefigsizey = json_settings["pie_figsize_y"]
+            self.pie_figsize = (piefigsizex, piefigsizey)
+        except KeyError :
+            print("Could not find pie_figsize_x or pie_figsize_y in graph param file, setting default ...")
+            self.pie_figsize = (10,7)
+
+        try :
+            self.bar_ticksize = json_settings["bar_ticksize"]
+        except KeyError :
+            print("Could not find bar_ticksize in graph param file, setting default ...")
+            self.bar_ticksize = 12
+
+        try :
+            self.bar_titlesize = json_settings["bar_titlesize"]
+        except KeyError :
+            print("Could not find bar_titlesize in graph param file, setting default ...")
+            self.bar_titlesize = 16
+
+        try :
+            self.bar_axislabelsize = json_settings["bar_axislabelsize"]
+        except KeyError :
+            print("Could not find bar_axislabelsize in graph param file, setting default ...")
+            self.bar_axislabelsize = 14
         
+        try :
+            self.bar_patchsize = json_settings["bar_patchsize"]
+        except :
+            print("Could not find bar_patchsize in graph param file, setting default ...")
+            self.bar_patchsize = 13
+
+        try :
+            self.bar_xlbl_rotation = json_settings["bar_xlbl_rotation"]
+        except KeyError :
+            print("Could not find bar_xlbl_rotation in graph param file, setting default ...")
+            self.bar_xlbl_rotation = 50
+
+        try :
+            mbarfigsizex = json_settings["mbar_figsize_x"]
+            mbarfigsizey = json_settings["mbar_figsize_y"]
+            self.mbar_figsize = (mbarfigsizex, mbarfigsizey)
+        except KeyError :
+            print("Could not find mbar_figsize_x or mbar_figsize_y in graph param file, setting default ...")
+            self.mbar_figsize = (15,9)
+
+
+    # Recupere les parametres graphiques du fichier de config sous la forme d'un dictionnaire
+    def get_paramfile(self, config_file = "/config/graphs_param.json") :
+        # read file
+        with open(config_file, 'r') as myfile:
+            data=myfile.read()
+        # parse file
+        obj = json.loads(data)
+        return obj
 
     # Les camemberts servent a representer tous les resultats de Single Choice
     def plot_mbr_camembert(self, qtitle = '', list_labels = [], list_dtfs = [], fresh_lbls = []) :

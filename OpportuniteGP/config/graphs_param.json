@@ -1,0 +1,17 @@
+{
+    "Car name" : "baleno"  , 
+    "year" : 2009, 
+    "myfavcolors" : ["#f2cb26", "#00a154", "#0083c6", "#dc0036", "#fc8934", "#99248B", "#fb85a7", "#00b3f0"],
+    "pie_fav_eclat" : 0.005,
+    "pie_titlesize" : 14,
+    "pie_autopct" : "%1.1f%%",
+    "pie_figsize_x" : 10,
+    "pie_figsize_y" : 7,
+    "bar_ticksize" : 12,
+    "bar_titlesize" : 16,
+    "bar_axislabelsize" : 14,
+    "bar_patchsize" : 13,
+    "bar_xlbl_rotation" : 50,
+    "mbar_figsize_x" : 15,
+    "mbar_figsize_y" : 9
+}
