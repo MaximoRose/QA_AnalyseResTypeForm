@@ -1,10 +1,27 @@
 # English
+## Introduction
 I've made a code easy to use in Jupyter NoteBook to produce graphs of your TypeForm.
 
 The point is to avoid making a spreadsheets everytime I export my results, as I can export them multiple times for a single Form, just because I'm impatient to see the tendencies.
 
-Another personnal goal is to avoid using Google spreadsheet, eventhough it's a good product, I'm trying to degooglize myself. If you also start using this code, you can say, you engage with open source ;)
+I also like the Jupyter Notebook format as you can mix code, graphs and markups so that your work can be published as one element, limiting the anount of work, creating slides etc. to broadcast results.
 
+Another personnal goal is to avoid using Google spreadsheet, eventhough it's a good product. I'm trying to degooglize myself, just a little. If you also start using this code, you can say, you engage with open source ;)
+
+## How to use it ?
+- When you create a TypeForm try regrouping all you questions, as for this code to work, every question must be in a group. This can feel as a limitation, but I like to think of it as a way to always structure my forms.
+- Download all the files on your PC, and put all of them in the same folder. You only really need the .py files, but the .ipynb can be used as examples of how to use the functions defined in the .py files.
+- In said folder, create your own Jupyter Notebook (.ipynb file). Personnaly I use [Visual Studio Code](https://code.visualstudio.com/) to run all this. I Love it.
+- From your TypeForm interface download all the answers as a .csv file
+- Put them in the folder ./responses/
+- Name them : res_{TypeFormid}.csv
+
+You can find your TypeForm ID in the link you share :
+![where to find the typeform id](https://maximorose.eu/Ressources/TypeFormID.png)
+
+
+## Files
+- mbr_typeform.py : module with all the functions created to get answers to a specific question in a specific group of a typeform 
 
 
 
