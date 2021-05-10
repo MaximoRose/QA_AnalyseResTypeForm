@@ -38,6 +38,7 @@ For example, the following code would dump the structure in a "YvBfAdHB.json" fi
 
 ### Identify question ids and group indexes
 
+### Use the right function for the right type of questions.
 
 ## Files
 - mbr_typeform.py : module with all the functions created to get answers to a specific question in a specific group of a typeform 
