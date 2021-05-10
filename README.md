@@ -21,6 +21,7 @@ You can find your TypeForm ID in the link you share :
 ![where to find the typeform id](https://maximorose.eu/Ressources/TypeFormID.png)
 
 You can see the form structure if you go to URL : https://api.typeform.com/forms/{form-id}
+
 As an example, mine is : https://api.typeform.com/forms/YvBfAdHB (FireFox shows it in a readable manner)
 
 You can also dump the structure in the json file, with the function "dump_tform_structure()", after you've initialised your TypeForm.
