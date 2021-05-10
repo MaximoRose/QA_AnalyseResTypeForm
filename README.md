@@ -25,7 +25,7 @@ As an example, mine is : https://api.typeform.com/forms/YvBfAdHB (FireFox shows 
 
 You can also dump the structure in the json file, with the function "dump_tform_structure()", after you've initialised your TypeForm.
 
-For example, the following code would dump the structure in a "YvBfAdHB.json" in the ./forms/ folder
+For example, the following code would dump the structure in a "YvBfAdHB.json" file in the ./forms/ folder
 > import mbr_typeform as mbrtf
 > 
 > import mbr_plots as mbrpl
