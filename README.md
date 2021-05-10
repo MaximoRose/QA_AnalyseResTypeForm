@@ -9,6 +9,7 @@ I also like the Jupyter Notebook format as you can mix code, graphs and markups 
 Another personnal goal is to avoid using Google spreadsheet, eventhough it's a good product. I'm trying to degooglize myself, just a little. If you also start using this code, you can say, you engage with open source ;)
 
 ## How to use it ?
+### Create a TypeForm and set up your directories
 - When you create a TypeForm try regrouping all you questions, as for this code to work, every question must be in a group. This can feel as a limitation, but I like to think of it as a way to always structure my forms.
 - Download all the files on your PC, and put all of them in the same folder. You only really need the .py files, but the .ipynb can be used as examples of how to use the functions defined in the .py files.
 - In said folder, create your own Jupyter Notebook (.ipynb file). Personnaly I use [Visual Studio Code](https://code.visualstudio.com/) to run all this. I Love it.
@@ -18,6 +19,18 @@ Another personnal goal is to avoid using Google spreadsheet, eventhough it's a g
 
 You can find your TypeForm ID in the link you share :
 ![where to find the typeform id](https://maximorose.eu/Ressources/TypeFormID.png)
+
+You can see the form structure if you go to URL : https://api.typeform.com/forms/{form-id}
+As an example, mine is : https://api.typeform.com/forms/YvBfAdHB (FireFox shows it in a readable manner)
+
+You can also dump the structure in the json file, with the function "dump_tform_structure()", after you've initialised your TypeForm.
+
+For example, the following code would dump the structure in a "YvBfAdHB.json" in the ./forms/ folder
+> import mbr_typeform as mbrtf
+> import mbr_plots as mbrpl
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
+
+### Identify question ids and group indexes
 
 
 ## Files
