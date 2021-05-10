@@ -27,7 +27,9 @@ You can also dump the structure in the json file, with the function "dump_tform_
 
 For example, the following code would dump the structure in a "YvBfAdHB.json" in the ./forms/ folder
 > import mbr_typeform as mbrtf
+> 
 > import mbr_plots as mbrpl
+> 
 > tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
 
 ### Identify question ids and group indexes
