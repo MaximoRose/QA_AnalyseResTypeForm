@@ -31,6 +31,9 @@ For example, the following code would dump the structure in a "YvBfAdHB.json" in
 > import mbr_plots as mbrpl
 > 
 > tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
+> 
+> tfs.dump_tform_structure()
+
 
 ### Identify question ids and group indexes
 
