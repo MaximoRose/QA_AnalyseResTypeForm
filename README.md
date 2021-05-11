@@ -17,7 +17,7 @@ Another personnal goal is to avoid using Google spreadsheet, eventhough it's a g
 ### Set up your working environment
 - Download all the files on your PC, and put all of them in the same folder. You only really need the .py files, but the .ipynb can be used as examples of how to use the functions defined in the .py files.
 - In said folder, create your own Jupyter Notebook (.ipynb file). Personnaly I use [Visual Studio Code](https://code.visualstudio.com/) to run all this. I Love it.
-- From your TypeForm interface download all the answers as a .csv file
+- From your TypeForm interface download all the answers as a .csv file [example](https://maximorose.eu/Ressources/Screenshot%20from%202021-05-11%2019-59-17.png)
 - Put them in the folder ./responses/
 - Name them : res_{TypeFormid}.csv
 
@@ -82,7 +82,7 @@ The complete code to initialize the objects, get the results of the first respon
 > 
 > yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
 
-
+It corresponds to the first two blocks of my OpportuniteGP.ipynb file. You can use my file and just replace the form ID and the question ID.
 
 ### Use the right function for the right type of questions.
 
@@ -151,4 +151,44 @@ Par exemple, le code suivant, tapé dans un bloc Jupyter, créera un fichier "Yv
 > 
 > tfs.dump_tform_structure()
 
-La fonction : "mbr_typeFrom(formid='YvBfAdHB')" will initialize all the objects : the typeForm structure, and all the responses, based on the resp_xxx.csv file you've put in the ./responses/ folder.
+La fonction : "mbr_typeFrom(formid='YvBfAdHB')" initialisera tous les objets nécessaires aux fonctions qui suivront. Elle se base sur l'ID de votre formulaire que vous lui passer en paramètres, et sur le fichier de réponses que vous avez déposez dans ./responses/.
+
+
+### Identifier les groupes et les identifiants des questions
+Quand vous accédez à l'API de votre TypeForm dans FireFox (ou au fichier .json que vous avez dumpé), vous devez voir quelque chose comme ça :
+
+![typeform API structure](https://maximorose.eu/Ressources/tf_grpidx_qid.png)
+
+- Le premier index sous "field", le "0" entouré en rouge, correspond à l'index du premier groupe de question.
+- Les ids encerclé en vert correspondent aux id des question. Le premier est l'ID de la première question du groupe 0, le second est l'ID de la seconde question du groupe 0.
+- Le "type", souligné en bleu, vous servira à choisir les fonctions à utiliser pour afficher vos résultats.
+
+Sur la base de l'image ci-dessus, si je voulais récupérer le texte de la première question, toutes ses options possibles ainsi que toutes les réponses associées à cette question, j'utiliserais la fonction "get_results(gidx={group index},qid={question id})" à la suite du code précédent :
+
+> premierequestion_titre, premierequestion_options, premierequestion_reponses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
+
+- "tfs" est l'objet qu'on a initialisé dans le code précédent.
+- "premierequestion_titre" est une chaîne de caractères. C'est la question telle qu'elle est posée. Elle servira de titre aux graphiques qui suivront.
+- "premierequestion_options" est une liste de chaînes de caractère, une chaîne pour chaque option possible pour cette premère question.
+- "premierequestion_reponses" est une liste de dataframe pandas (i.e des tableaux peu ou prou). Un par option possibles. En gros, l'élément 0 est un dataframe qui correspond à l'ensemble des répondant ayant choisi l'option "0" (la première) à cette question.
+
+"premierequestion_options" et "premierequestion_reponses" devrait faire la même taille.
+
+Maintenant si vous voulez obtenir un camembert affichant les résultats de la première question, utilisez la fonction "plot_mbr_camembert()" du module "mbr_plots".
+
+Le code complet pour charger les données et tracer les résultats serait donc: 
+
+> import mbr_typeform as mbrtf #Import module with all the typeform functions
+> 
+> import mbr_plots as mbrpl #Import module with plot function
+> 
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Import all the objects and structure of the typeForm
+> 
+> myfig = mbrpl.plots_mbr_tf() #Initialize the plotting environment
+> 
+> firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
+> 
+> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
+> 
+
+Il correspond aux deux premiers blocs de mon fichier OpportuniteGP.ipynb. Vous pouvez partir de mon fichier et remplacer l'ID du formulaire, ainsi que l'ID de la première question. (normalement le group index est le même, si vous avez bien mis toutes vos questions dans des groupes)
