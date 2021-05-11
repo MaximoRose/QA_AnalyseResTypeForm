@@ -1,4 +1,6 @@
-# TypeForm analysis python code / Code python pour analyser les résultats d'un TypeForm
+# TypeForm analysis python code / 
+# Code python pour analyser les résultats d'un TypeForm /
+
 
 # Table of contents / Table des matières
 ----------------------------------------------------------------------
