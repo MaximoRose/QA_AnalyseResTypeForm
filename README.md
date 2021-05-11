@@ -1,9 +1,24 @@
 # Table of contents
 * [ENGLISH](#english)
-* [Introduction](##Introduction)
+* [Introduction](#introduction)
 * [How to use it ?](#how-to-use-it-)
-* >[Create a TypeForm with the right structure](#create-a-typeform-with-the-proper-structure)
-* [Files and folders](##Filesandfolders)
+>>[Create a TypeForm with the right structure](#create-a-typeform-with-the-proper-structure)
+>>[Set up your working environment](#set-up-your-working-environment)
+>>[Identify group indexes and question ids](#identify-question-ids-and-group-indexes)
+>>[Use the right function for the right type of questions](#use-the-right-function-for-the-right-type-of-questions)
+>>[WIP : get cross results between questions](#get-cross-results-between-questions)
+* [Files and folders](#files-and-folders)
+
+* [FRANCAIS](#francais)
+* [Introduction](#introduction-1)
+* [Comment l'utiliser ?](#comment-lutiliser-)
+>>[Create a TypeForm with the right structure]()
+>>[Set up your working environment](#set-up-your-working-environment)
+>>[Identify group indexes and question ids](#identify-question-ids-and-group-indexes)
+>>[Use the right function for the right type of questions](#use-the-right-function-for-the-right-type-of-questions)
+>>[WIP : get cross results between questions](#get-cross-results-between-questions)
+* [Files and folders](#files-and-folders)
+
 
 
 # ENGLISH
