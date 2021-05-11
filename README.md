@@ -53,12 +53,30 @@ On the picture above, if I want to get the 1st question name, its labels and its
 
 > firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
 
-- "tfs" is the objecti defined above.
+- "tfs" is the object defined above.
 - "firstquestion_title" is a string : the question itself, used to name the plots.
-- "firstquestion_labels" : are the possible answers, used to label the plot.
-- "firstquestion_responses" : is the list of dataframes corresponding to each possible answer. 
+- "firstquestion_labels" : are the possible answers, as a list of strings, used to label the plot.
+- "firstquestion_responses" : is the list of each dataframe corresponding to each possible answer. 
 
 "firstquestion_labels" and "firstquestion_responses" should be the same length.
+
+Now, if I want to pie plot the results, I'll use function "plot_mbr_camembert()" in module "mbr_plots". 
+
+__N.B :__ When considering plots, french people don't see pies they see "camembert", one of their round cheese, that's why the function is called so.
+
+The complete code to initialize the objects, get the results of the first response and plot them would be : 
+
+> import mbr_typeform as mbrtf #Import module with all the typeform functions
+> 
+> import mbr_plots as mbrpl #Import module with plot function
+> 
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Import all the objects and structure of the typeForm
+> 
+> myfig = mbrpl.plots_mbr_tf() #Initialize the plotting environment
+> 
+> firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
+> 
+> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
 
 
 
