@@ -35,8 +35,32 @@ For example, the following code would dump the structure in a "YvBfAdHB.json" fi
 > 
 > tfs.dump_tform_structure()
 
+The function : "mbr_typeFrom(formid='YvBfAdHB')" will initialize all the objects : the typeForm structure, and all the responses, based on the resp_xxx.csv file you've put in the ./responses/ folder.
+
+
+
 
 ### Identify question ids and group indexes
+When you access your typeform API, you will see something like this : 
+
+![typeform API structure](https://maximorose.eu/Ressources/tf_grpidx_qid.png)
+
+- The first field index, "0" circled in red, correspond to the first group of questions' index.
+- The ids circled in green are the questions' id.
+- The "type" underlined will be needed to knwo which function to use.
+
+On the picture above, if I want to get the 1st question name, its labels and its responses, I will use  index group 0 and question id oYqnhtesJuF5 with function get_results(gidx={group index},qid={question id})
+
+> firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
+
+- "tfs" is the objecti defined above.
+- "firstquestion_title" is a string : the question itself, used to name the plots.
+- "firstquestion_labels" : are the possible answers, used to label the plot.
+- "firstquestion_responses" : is the list of dataframes corresponding to each possible answer. 
+
+"firstquestion_labels" and "firstquestion_responses" should be the same length.
+
+
 
 ### Use the right function for the right type of questions.
 
