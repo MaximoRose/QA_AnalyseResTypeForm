@@ -9,7 +9,7 @@
         "href": "https://api.typeform.com/themes/rqYVKG"
     },
     "settings": {
-        "language": "en",
+        "language": "fr",
         "progress_bar": "percentage",
         "meta": {
             "allow_indexing": false
@@ -24,7 +24,7 @@
     },
     "thankyou_screens": [
         {
-            "id": "Qqjsuctez13k",
+            "id": "MfT5xzCKgrtt",
             "ref": "28eaef70-33e8-4b40-8dfe-627dc628224d",
             "title": "C'est fini ! Merci beaucoup d'avoir repondu. Si vous voulez suivre les actus de mon projet, je les posterai [ici](https://maximorose.eu/category/pro/culture-it/). Sinon, vous pouvez me contacter sur [LinkedIn](https://www.linkedin.com/in/massimo-bruni-5a959619b/). A tr\u00e8s vite, j'esp\u00e8re, pour d\u00e9velopper ensemble la culture IT en France.",
             "properties": {
@@ -37,7 +37,7 @@
         {
             "id": "DefaultTyScreen",
             "ref": "default_tys",
-            "title": "Done! Your information was sent perfectly.",
+            "title": "Merci ! Vos informations ont parfaitement \u00e9t\u00e9 envoy\u00e9es.",
             "properties": {
                 "show_button": false,
                 "share_icons": false
@@ -46,9 +46,9 @@
     ],
     "welcome_screens": [
         {
-            "id": "V1mBNYDz1Ygx",
+            "id": "9N74PXd628C2",
             "ref": "6ae34aa1-1ec7-4723-b1eb-14db435a5063",
-            "title": "Bonjour ! J'aimerais monter une structure culturelle, type mus\u00e9e, d\u00e9di\u00e9e aux sciences de l'information. Dans le paysage institutionnel, le mus\u00e9e est l'organe cens\u00e9 ouvrir un pan de la connaissance \u00e0 tous les publics : jeunes, ag\u00e9s, professionnels, particuliers, scolaires, touristes, etc. Ses activit\u00e9s sont diverses : des expositions aux ateliers, des colloques aux \u00e9missions de radios, des prestations d'ing\u00e9nierie \u00e0 l'accompagnement de projets culturels. L'enjeu est d'ouvrir et de d\u00e9velopper la culture d'un domaine, en la rendant accessible \u00e0 tous, pour que puisse y germer la cr\u00e9ation. Ce questionnaire anonyme permettra d'\u00e9valuer l'opportunit\u00e9 pour la soci\u00e9t\u00e9 d'une telle structure. N'h\u00e9sitez pas \u00e0 inviter toutes les personnes que vous connaissez \u00e0 le remplir, car il faut viser l'Universalit\u00e9 ! C'est un peu long, mais ce serait chic d'y r\u00e9pondre enti\u00e8rement. Je pourrais vous faire part des r\u00e9sultats si \u00e7a vous int\u00e9resse, et vous en apprendrez alors plus sur vous et sur les autres. C'est \u00e0 \u00e7a que sert l'information : a \u00eatre partag\u00e9e pour augmenter la connaissance globale.",
+            "title": "Bonjour ! J'aimerais monter une structure culturelle, type mus\u00e9e, d\u00e9di\u00e9e aux sciences de l'information. Dans le paysage institutionnel, le mus\u00e9e est l'organe cens\u00e9 ouvrir un pan de la connaissance \u00e0 tous les publics : jeunes, ag\u00e9s, professionnels, particuliers, scolaires, touristes, etc. Ses activit\u00e9s sont diverses : des expositions aux ateliers, des colloques aux \u00e9missions de radios, des prestations d'ing\u00e9nierie \u00e0 l'accompagnement de projets culturels. L'enjeu est d'ouvrir et de d\u00e9velopper la culture d'un domaine, en la rendant accessible \u00e0 tous, pour que puisse y germer la cr\u00e9ation. Ce questionnaire anonyme permettra d'\u00e9valuer l'opportunit\u00e9 pour la soci\u00e9t\u00e9 d'une telle structure. N'h\u00e9sitez pas \u00e0 inviter toutes les personnes que vous connaissez \u00e0 le remplir, car il faut viser l'Universalit\u00e9 ! C'est un peu long, mais ce serait chic d'y r\u00e9pondre enti\u00e8rement. Je pourrais vous faire part des r\u00e9sultats si \u00e7a vous int\u00e9resse, et vous en apprendrez alors plus sur vous et sur les autres. C'est \u00e0 \u00e7a que sert l'information : \u00e0 \u00eatre partag\u00e9e pour augmenter la connaissance globale.",
             "properties": {
                 "show_button": true,
                 "button_text": "Start"
@@ -73,23 +73,23 @@
                             "alphabetical_order": false,
                             "choices": [
                                 {
-                                    "id": "3cbUfPAcvZb0",
-                                    "ref": "01F1YRKX0NNVPZJ1WNFMEP507Y",
+                                    "id": "74962SYnZwv5",
+                                    "ref": "01F32K86NMRP60DPYR4BVE3X98",
                                     "label": "Non genr\u00e9"
                                 },
                                 {
-                                    "id": "ANF0PaDj26Dw",
-                                    "ref": "01F1YRKX0N84KS6BEVA6KNKEMP",
+                                    "id": "amNVwJWBl5I6",
+                                    "ref": "01F32K86NM7AK80FW9RT9KXQGZ",
                                     "label": "Fluide"
                                 },
                                 {
-                                    "id": "zYxZ0DbtI0Nb",
-                                    "ref": "01F1YRKX0NKZJ3FQPQZBQ4ZX0N",
+                                    "id": "EXXX78Zbqqhw",
+                                    "ref": "01F32K86NM99NZA2NJKTYB6S2H",
                                     "label": "Un homme"
                                 },
                                 {
-                                    "id": "f3sJ0HQ9NbKI",
-                                    "ref": "01F1YRKX0NBZJMPTR6XT10RBNQ",
+                                    "id": "9htz72nOwRqw",
+                                    "ref": "01F32K86NM348R9KB8MPE7QSJ3",
                                     "label": "Une femme"
                                 }
                             ]
@@ -108,33 +108,33 @@
                             "alphabetical_order": false,
                             "choices": [
                                 {
-                                    "id": "fy2RFMJfKqKd",
-                                    "ref": "01F1YRKX0N75S7D8A29DM470F1",
+                                    "id": "NZtB1Vm7cP1J",
+                                    "ref": "01F32K86NMMVJRJ3EBQADGT7Q3",
                                     "label": "Moins de 18 ans"
                                 },
                                 {
-                                    "id": "LLgLJaQYfDM6",
-                                    "ref": "01F1YRKX0NY6C7VJR2DJFP9182",
+                                    "id": "9aHFz19sd1BP",
+                                    "ref": "01F32K86NMKJNRPEHXJWZ1FE27",
                                     "label": "Entre 18 et 25 ans"
                                 },
                                 {
-                                    "id": "BbELAHtfKMTM",
-                                    "ref": "01F1YRKX0NS15W09DF5D7ZNT7F",
+                                    "id": "2D6TRFdSyy30",
+                                    "ref": "01F32K86NM8JJ26F4A4ZBG7PQJ",
                                     "label": "Entre 26 et 35 ans"
                                 },
                                 {
-                                    "id": "Uk8ywZByAGtA",
-                                    "ref": "01F1YRKX0NJ7HNSZYZDJZWMAFP",
+                                    "id": "cWV2Bm2rJiIY",
+                                    "ref": "01F32K86NM9EGRDYHKGXZZN738",
                                     "label": "Entre 36 et 50 ans"
                                 },
                                 {
-                                    "id": "wxTqAlU6awXq",
-                                    "ref": "01F1YRKX0N8W4YQN5EZTC487CA",
+                                    "id": "SOBxJSDuzm6V",
+                                    "ref": "01F32K86NM9M6M80P823T8Y3VN",
                                     "label": "Entre 51 et 75 ans"
                                 },
                                 {
-                                    "id": "9nWj1Z3qQCfd",
-                                    "ref": "01F1YRKX0NQ83C92K63247F5YM",
+                                    "id": "NCdTrL9UeE07",
+                                    "ref": "01F32K86NM8HTYYD4RM8JKAS27",
                                     "label": "76 ans et plus"
                                 }
                             ]
@@ -163,28 +163,28 @@
                             "alphabetical_order": false,
                             "choices": [
                                 {
-                                    "id": "DjKA3Jc6WSeQ",
-                                    "ref": "01F1YRKX0N0CGAW5JAW7RC3NPJ",
-                                    "label": "Formation professionnel"
+                                    "id": "DG6CrqtUD0J4",
+                                    "ref": "01F32K86NM9GJMKTKKSCSJ8GVR",
+                                    "label": "Formation professionnelle"
                                 },
                                 {
-                                    "id": "tz2jYjz1s52H",
-                                    "ref": "01F1YRKX0NEXB2HWWE22JN8MKV",
+                                    "id": "t4o2774WHNaF",
+                                    "ref": "01F32K86NMVEGXYJ08211W2GH4",
                                     "label": "Bac +2"
                                 },
                                 {
-                                    "id": "gHYC2dl9Q00B",
-                                    "ref": "01F1YRKX0NG2FJGHT2PM7SKCHR",
+                                    "id": "lWzMe7rFZtqY",
+                                    "ref": "01F32K86NM8J253HQHF5F37DRG",
                                     "label": "Licence"
                                 },
                                 {
-                                    "id": "HZnAd54IoioY",
-                                    "ref": "01F1YRKX0N4KCRT40CZCMRB3AW",
+                                    "id": "KAdn56X9QuxZ",
+                                    "ref": "01F32K86NM7NYG29M1EAQCGVK5",
                                     "label": "Master / Dipl\u00f4me d'ing\u00e9nieur"
                                 },
                                 {
-                                    "id": "U0CP7E8GNt3W",
-                                    "ref": "01F1YRKX0N5NT33SHH8FY4H9AD",
+                                    "id": "9kgBJm2L96ft",
+                                    "ref": "01F32K86NMY0F9X7QT0HTFFMCH",
                                     "label": "Doctorat"
                                 }
                             ]
@@ -547,7 +547,7 @@
                     },
                     {
                         "id": "HapPLe0c3LtH",
-                        "title": "Param\u00e9trez-vous les cookies quand les sites vous le propose ?",
+                        "title": "Param\u00e9trez-vous les cookies quand les sites vous le proposent ?",
                         "ref": "7451a1c9-c83f-4af1-a718-2768271e35fe",
                         "properties": {
                             "randomize": false,
@@ -816,23 +816,23 @@
                             "alphabetical_order": false,
                             "choices": [
                                 {
-                                    "id": "FbBqqE0lJUFE",
-                                    "ref": "01F1YRKX0NE1D3JAYMS9JB666T",
+                                    "id": "v090m3wjfvNG",
+                                    "ref": "01F32K86NMV99S3H67RZ684SG9",
                                     "label": "Moins de 5 euros"
                                 },
                                 {
-                                    "id": "K0MLfwr3UxF2",
-                                    "ref": "01F1YRKX0NMY2TW33XZ22A9JCW",
+                                    "id": "Gz8XGd43djmw",
+                                    "ref": "01F32K86NMZ7RH8JE4RDE0ZT8E",
                                     "label": "Entre 5 et 10"
                                 },
                                 {
-                                    "id": "mhPhr4eevrtu",
-                                    "ref": "01F1YRKX0N3BZ2HCGAEFHERCV3",
+                                    "id": "3r1m2t0wiJqo",
+                                    "ref": "01F32K86NMA5WW5TMZBNV3NYXF",
                                     "label": "Entre 10 et 15"
                                 },
                                 {
-                                    "id": "Lj0wn4TAP6BQ",
-                                    "ref": "01F1YRKX0N9F8KXSAFWKD5S6PR",
+                                    "id": "iAA0ZK2bDao4",
+                                    "ref": "01F32K86NM28MCGVB308B73S9Y",
                                     "label": "Bien plus ! Le savoir n'a pas de prix"
                                 }
                             ]
@@ -1109,7 +1109,7 @@
                     },
                     {
                         "id": "VQ8iQTpII5iU",
-                        "title": "Vous souvenez-vous sur quelle.s plateforme.s c'\u00e9tai.en.t ?",
+                        "title": "Vous souvenez-vous sur quelle plateforme c'\u00e9tait ?",
                         "ref": "25b5649f-f848-452b-8a56-6653e164f397",
                         "properties": {
                             "randomize": false,
@@ -1156,7 +1156,7 @@
                     },
                     {
                         "id": "I3G4Wsg6JAGd",
-                        "title": "S'il existait un endroit sur Internet o\u00f9 trouver toutes les vid\u00e9os post\u00e9es par les institutions culturelles (th\u00e9\u00e2tre, danse, sciences, s\u00e9minaires, conf\u00e9rences, etc.), iriez-vous le consulter de temps en temps ?",
+                        "title": "S'il existait un endroit sur Internet o\u00f9 trouver toutes les vid\u00e9os post\u00e9es par les institutions culturelles (th\u00e9\u00e2tre, spectacles vivants, sciences, s\u00e9minaires, conf\u00e9rences, etc.), iriez-vous le consulter de temps en temps ?",
                         "ref": "0617b53e-d71d-4db7-a406-2e23be3f9286",
                         "properties": {
                             "start_at_one": false,
@@ -1173,7 +1173,7 @@
                     },
                     {
                         "id": "VK6kxx4uSZjR",
-                        "title": "Depuis le debut du confinement, avez-vous pris part \u00e0 des activit\u00e9s num\u00e9riques organis\u00e9es par des institutions culturelles (mus\u00e9es, fondations, th\u00e9\u00e2tres, cin\u00e9ma, biblioth\u00e8que, etc.) ou par le service public de mani\u00e8re plus g\u00e9n\u00e9rale (e.g activit\u00e9s organis\u00e9es par des mairies ou des associations) ?",
+                        "title": "Depuis le debut du confinement, avez-vous pris part \u00e0 des activit\u00e9s num\u00e9riques organis\u00e9es par des institutions culturelles (mus\u00e9es, fondations, th\u00e9\u00e2tres, cin\u00e9mas, biblioth\u00e8ques, etc.) ou par le service public de mani\u00e8re plus g\u00e9n\u00e9rale (activit\u00e9s organis\u00e9es par des mairies ou des associations) ?",
                         "ref": "83785bd2-d839-4c4d-aca9-dc59d76602ff",
                         "properties": {
                             "randomize": false,
@@ -1210,7 +1210,7 @@
                     },
                     {
                         "id": "JN4TO5fjBNlJ",
-                        "title": "Parmis les institutions suivantes selectionnez celles que vous connaissez :",
+                        "title": "Parmi les institutions suivantes s\u00e9lectionnez celles que vous connaissez :",
                         "ref": "d750b21c-9c37-4bcc-9c34-4cf239cbd727",
                         "properties": {
                             "randomize": false,
@@ -1345,7 +1345,7 @@
                                 {
                                     "id": "FqiekX2pcHXn",
                                     "ref": "a8eaf66b-5be2-4195-bf9e-9c3f9c5eedd7",
-                                    "label": "Comment le num\u00e9rique influt-il sur nos droits et nos libert\u00e9s ? Quels sont les risques et menaces (reconnaissance faciale, manipulation des masses, etc.)?"
+                                    "label": "Comment le num\u00e9rique influt-il sur nos droits et nos libert\u00e9s ? Quels sont les risques et menaces (reconnaissance faciale, manipulation des masses, etc.) ?"
                                 },
                                 {
                                     "id": "y2Rg9UwVZqpp",
