@@ -1,4 +1,5 @@
 # Table of contents
+----------------------------------------------------------------------
 * [ENGLISH](#english)
 * [Introduction](#introduction)
 * [How to use it ?](#how-to-use-it-)
@@ -8,6 +9,8 @@
   * [Use the right function for the right type of questions](#use-the-right-function-for-the-right-type-of-questions)
   * [WIP : get cross results between questions](#get-cross-results-between-questions)
 * [Files and folders](#files-and-folders)
+
+----------------------------------------------------------------------
 
 * [FRANCAIS](#francais)
 * [Introduction](#introduction-1)
@@ -19,7 +22,7 @@
   * [WIP : get cross results between questions](#get-cross-results-between-questions)
 * [Files and folders](#files-and-folders)
 
-
+----------------------------------------------------------------------
 
 # ENGLISH
 ## Introduction
@@ -156,7 +159,7 @@ Et puis, j'aime bien le format Jupyter Notebook parce qu'il mélange code, graph
 Enfin, j'essaie de me dégoogliser un peu. Si vous utilisez ce code, vous pourrez dire que vous soutenez les initiatives Open Source ! xD
 
 ## Comment l'utiliser ?
-### Créer votre TtpeForm avec une structure appropriée
+### Créer votre TypeForm avec une structure appropriée
 - Quand vous créer votre TypeForm, regroupez toutes vos questions dans des "groupes de questions". Si ça peut paraître limitant, cela force à bien structurer son questionnaire.
 
 !["Question group" dans TypeForm](https://maximorose.eu/Ressources/Question_Group_TypeForm.png)
