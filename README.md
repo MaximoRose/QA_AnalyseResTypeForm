@@ -15,12 +15,12 @@
 * [FRANCAIS](#francais)
 * [Introduction](#introduction-1)
 * [Comment l'utiliser ?](#comment-lutiliser-)
-  * [Create a TypeForm with the right structure]()
-  * [Set up your working environment](#set-up-your-working-environment)
-  * [Identify group indexes and question ids](#identify-question-ids-and-group-indexes)
-  * [Use the right function for the right type of questions](#use-the-right-function-for-the-right-type-of-questions)
-  * [WIP : get cross results between questions](#get-cross-results-between-questions)
-* [Files and folders](#files-and-folders)
+  * [Créer votre TypeForm avec une structure appropriée](#cr%C3%A9er-votre-typeform-avec-une-structure-appropri%C3%A9e)
+  * [Définissez votre environnement de travail](#d%C3%A9finissez-votre-environnement-de-travail)
+  * [Identifier les groupes et les identifiants des questions](#identifier-les-groupes-et-les-identifiants-des-questions)
+  * [Utilisez les bonnes fonctions pour les bons types de questions](#utilisez-les-bonnes-fonctions-pour-les-bons-types-de-questions)
+  * [WIP : Croiser des réponses](#croiser-des-r%C3%A9ponses)
+* [Les fichiers et dossiers](#les-fichiers-et-dossiers)
 
 ----------------------------------------------------------------------
 
