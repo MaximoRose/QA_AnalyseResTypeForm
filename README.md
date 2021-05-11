@@ -1,8 +1,8 @@
 # Table of contents
 * [ENGLISH](#english)
 * [Introduction](##Introduction)
-* [How to use it ?](##How to use it ?)
-* [Files and folders](##Files and folders)
+* [How to use it ?](##Howtouseit)
+* [Files and folders](##Filesandfolders)
 
 
 # ENGLISH
