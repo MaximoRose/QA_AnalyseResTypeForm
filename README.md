@@ -139,14 +139,14 @@ Hope it helps !
 Take care
 
 ## Files and folders
-- mbr_typeform.py : module with all the functions created to get answers to a specific question in a specific group of a typeform 
-- mbr_plots.py : module with all plot functions
-- OpportuniteGP.ipynb : the analysis of my form results where I use all the functions I've defined
-- xOpportuniteGP.ipynb : a sandbox file where I practised cross-result analysis
-- ./config/graph_params.json : parameters for plots, like colors, pie explode, title size, etc.
-- ./Documentation/ : has printscreens of my form, to illustrate how it looked
-- ./forms/ : I don't know why, but I like having a json file where I drop the structure of my forms. Maybe so I can work offline easy. So this is the folder where the structure is always dumps
-- ./responses/ : is where you put the .csv file associated to the responses you had.
+- __mbr_typeform.py :__ module with all the functions created to get answers to a specific question in a specific group of a typeform 
+- __mbr_plots.py :__ module with all plot functions
+- __OpportuniteGP.ipynb :__ the analysis of my form results where I use all the functions I've defined
+- __xOpportuniteGP.ipynb :__ a sandbox file where I practised cross-result analysis
+- __./config/graph_params.json :__ parameters for plots, like colors, pie explode, title size, etc.
+- __./Documentation/ :__ has printscreens of my form, to illustrate how it looked
+- __./forms/ :__ I don't know why, but I like having a json file where I drop the structure of my forms. Maybe so I can work offline easy. So this is the folder where the structure is always dumps
+- __./responses/ :__ is where you put the .csv file associated to the responses you had.
 
 # FRANCAIS
 ## Introduction
@@ -262,14 +262,14 @@ J'espère que cela servira à certains d'entre vous,
 Prenez soin de vous !
 
 ## Les fichiers et dossiers
-- mbr_typeform.py : Module avec toutes les fonctions liées au TypeForm. La classe mbrtf permet de créer un objet ayant pour attribut la structure du questionnaire, son titre, les réponses associées (si elles sont bien dans le dossier dédié).  
-- mbr_plots.py : module avec toutes mes fonctions de graphs
-- OpportuniteGP.ipynb : L'analyse des résultats de mon formulaire, où vous trouverez des exemples de comment utiliser les différentes fonctions.
-- xOpportuniteGP.ipynb : Un petit fichier bac à sable pour faire des analyses croisées des réponses aux questions.
-- ./config/graph_params.json : paramètres des graphiques, comme les couleurs, la taille des titres, etc.
-- ./Documentation/ : quelques printscreen de mon formulaire initial pour mettre en perspective mes fonctions si vous n'avez pas répondu à mon [questionnaire](https://j85vsp5f9lc.typeform.com/to/YvBfAdHB)
-- ./forms/ : J'aime bien avoir la structure de mon questionnaire sous la forme d'un fichier.json, ça permet de travailler hors ligne. C'est dans ce dossier que son dumpés les fichiers avec la fonction dump()
-- ./responses/ : C'est dans ce dossier qu'il faut déposer les fichiers .csv de réponse au questionnaire.
+- __mbr_typeform.py :__ Module avec toutes les fonctions liées au TypeForm. La classe mbrtf permet de créer un objet ayant pour attribut la structure du questionnaire, son titre, les réponses associées (si elles sont bien dans le dossier dédié).  
+- __mbr_plots.py :__ module avec toutes mes fonctions de graphs
+- __OpportuniteGP.ipynb :__ L'analyse des résultats de mon formulaire, où vous trouverez des exemples de comment utiliser les différentes fonctions.
+- __xOpportuniteGP.ipynb :__ Un petit fichier bac à sable pour faire des analyses croisées des réponses aux questions.
+- __./config/graph_params.json :__ paramètres des graphiques, comme les couleurs, la taille des titres, etc.
+- __./Documentation/ :__ quelques printscreen de mon formulaire initial pour mettre en perspective mes fonctions si vous n'avez pas répondu à mon [questionnaire](https://j85vsp5f9lc.typeform.com/to/YvBfAdHB)
+- __./forms/ :__ J'aime bien avoir la structure de mon questionnaire sous la forme d'un fichier.json, ça permet de travailler hors ligne. C'est dans ce dossier que son dumpés les fichiers avec la fonction dump()
+- __./responses/ :__ C'est dans ce dossier qu'il faut déposer les fichiers .csv de réponse au questionnaire.
 
 
 
