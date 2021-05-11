@@ -126,8 +126,29 @@ Enfin, j'essaie de me dégoogliser un peu. Si vous utilisez ce code, vous pourre
 
 ### Définissez votre environnement de travail
 - Télécharger tous les fichiers de Github. Vous n'avez réellement besoin que des .py, mais les .ipynb peuvent vous servir d'exemples pour utiliser les différentes fonctions définis dans les .py.
-- Dans ce dossier créer donc votre propre Jupyter NoteBook (fichier .ipynb). Personnellement j'utilise [Visual Studio Code](https://code.visualstudio.com/) et j'adore ça. Et, j'ai appris le python dans Jupyter en partant du cours Open classroom référencé dans [mon autre Repo] (https://github.com/MaximoRose/JupyterNoteBook_OpenCR_Python)
-- Depuis votre interface d'administration TypeForm récupérez les réponses à votre questionnaire
-- From your TypeForm interface download all the answers as a .csv file
-- Put them in the folder ./responses/
-- Name them : res_{TypeFormid}.csv
+- Dans ce dossier créer donc votre propre Jupyter NoteBook (fichier .ipynb). Personnellement j'utilise [Visual Studio Code](https://code.visualstudio.com/) et j'adore ça. Et, j'ai appris le python dans Jupyter en partant du cours Open classroom référencé dans [mon autre Repo](https://github.com/MaximoRose/JupyterNoteBook_OpenCR_Python)
+- Depuis votre interface d'administration TypeForm récupérez les réponses à votre questionnaire [exemple](https://maximorose.eu/Ressources/Screenshot%20from%202021-05-11%2019-59-17.png)
+- Mettez le fichier .csv dans le dossier ./responses/
+- Et renommez-le res_{TypeFormid}.csv
+
+
+Vous pouvez trouver l'ID de votre TypeForm dans le lien que vous envoyez quand vous le partagez :
+![where to find the typeform id](https://maximorose.eu/Ressources/TypeFormID.png)
+
+Pour voir la structure de votre questionnaire, accédez à l'URL : https://api.typeform.com/forms/{form-id}
+
+Par exemple, celle de mon questionnaire se trouve ici : https://api.typeform.com/forms/YvBfAdHB (mieux vaut ouvrir ce lien avec FireFox pour avoir un truc un peu lisible)
+
+Si vous voulez enregistrer la structure de votre questionnaire dans un fichier .json sur votre PC, vous pouvez utiliser la fonction "dump_tform_structure()", après avoir initialisé votre objet TypeForm.
+
+Par exemple, le code suivant, tapé dans un bloc Jupyter, créera un fichier "YvBfAdHB.json" (id de mon questionnaire) dans le sous-dossier ./forms/ 
+
+> import mbr_typeform as mbrtf
+> 
+> import mbr_plots as mbrpl
+> 
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
+> 
+> tfs.dump_tform_structure()
+
+La fonction : "mbr_typeFrom(formid='YvBfAdHB')" will initialize all the objects : the typeForm structure, and all the responses, based on the resp_xxx.csv file you've put in the ./responses/ folder.
