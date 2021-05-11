@@ -106,7 +106,7 @@ The complete code to initialize the objects, get the results of the first respon
 > 
 > firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
 > 
-> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
+> myfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
 
 It corresponds to the first two blocks of my OpportuniteGP.ipynb file. You can use my file and just replace the form ID and the question ID.
 
@@ -228,7 +228,7 @@ Le code complet pour charger les données et tracer les résultats serait donc:
 > 
 > firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
 > 
-> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
+> myfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
 > 
 
 Il correspond aux deux premiers blocs de mon fichier OpportuniteGP.ipynb. Vous pouvez partir de mon fichier et remplacer l'ID du formulaire, ainsi que l'ID de la première question. (normalement le group index est le même, si vous avez bien mis toutes vos questions dans des groupes)
