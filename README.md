@@ -27,13 +27,13 @@ As an example, mine is : https://api.typeform.com/forms/YvBfAdHB (FireFox shows 
 You can also dump the structure in the json file, with the function "dump_tform_structure()", after you've initialised your TypeForm.
 
 For example, the following code would dump the structure in a "YvBfAdHB.json" file in the ./forms/ folder
-> import mbr_typeform as mbrtf
-> 
-> import mbr_plots as mbrpl
-> 
-> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
-> 
-> tfs.dump_tform_structure()
+`import mbr_typeform as mbrtf
+
+import mbr_plots as mbrpl
+
+tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB')
+ 
+tfs.dump_tform_structure()`
 
 The function : "mbr_typeFrom(formid='YvBfAdHB')" will initialize all the objects : the typeForm structure, and all the responses, based on the resp_xxx.csv file you've put in the ./responses/ folder.
 
@@ -66,7 +66,7 @@ __N.B :__ When considering plots, french people don't see pies they see "camembe
 
 The complete code to initialize the objects, get the results of the first response and plot them would be : 
 
-> import mbr_typeform as mbrtf #Import module with all the typeform functions
+`import mbr_typeform as mbrtf #Import module with all the typeform functions
 > 
 > import mbr_plots as mbrpl #Import module with plot function
 > 
@@ -76,7 +76,7 @@ The complete code to initialize the objects, get the results of the first respon
 > 
 > firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
 > 
-> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)
+> yfig.plot_mbr_camembert(qtitle = firstquestion_title, list_labels = firstquestion_labels, list_dtfs = firstquestion_responses)`
 
 
 
