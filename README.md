@@ -1,7 +1,8 @@
 # Table of contents
 * [ENGLISH](#english)
 * [Introduction](##Introduction)
-* [How to use it ?](##Howtouseit)
+* [How to use it ?](#how-to-use-it-)
+* >[Create a TypeForm with the right structure](#create-a-typeform-with-the-proper-structure)
 * [Files and folders](##Filesandfolders)
 
 
