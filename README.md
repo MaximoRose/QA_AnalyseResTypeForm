@@ -1,3 +1,9 @@
+# Table of contents
+* [ENGLISH](#english)
+** [Introduction](##Introduction)
+* [FRANCAIS](#francais)
+
+
 # ENGLISH
 ## Introduction
 I've made a code pretty easy to use in Jupyter NoteBook to produce plots for your TypeForm responses.
