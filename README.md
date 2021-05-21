@@ -73,9 +73,9 @@ When you access your typeform API, you will see something like this :
 
 ![typeform API structure](https://maximorose.eu/Ressources/tf_grpidx_qid.png)
 
-- The first field index, "0" circled in red, correspond to the first group of questions' index.
+- The first field index, "0" circled in red, corresponds to the first group of questions' index.
 - The ids circled in green are the questions' id.
-- The "type" underlined will be needed to knwo which function to use.
+- The "type" underlined will be needed to know which function to use.
 
 On the picture above, if I want to get the 1st question name, its labels and its responses, I will use  index group 0 and question id oYqnhtesJuF5 with function get_results(gidx={group index},qid={question id})
 
@@ -84,13 +84,13 @@ On the picture above, if I want to get the 1st question name, its labels and its
 - "tfs" is the object defined above.
 - "firstquestion_title" is a string : the question itself, used to name the plots.
 - "firstquestion_labels" : are the possible answers, as a list of strings, used to label the plot.
-- "firstquestion_responses" : is the list of each dataframe corresponding to each possible answer. 
+- "firstquestion_responses" : is the list of each dataframe corresponding to each possible answer. firstquestion_responses[0] is the dataframe of all the persons who selected firstquestion_labels[0] for the question named firstquestion_title.
 
 "firstquestion_labels" and "firstquestion_responses" should be the same length.
 
 Now, if I want to pie plot the results, I'll use function "plot_mbr_camembert()" in module "mbr_plots". 
 
-__N.B :__ When considering plots, french people don't see pies they see "camembert", one of their round cheese, that's why the function is called so.
+__N.B :__ When considering plots, french people don't see pies, they see "camembert", one of their round cheese. That's why the function is called so, I'm a silly french person.
 
 The complete code to initialize the objects, get the results of the first response and plot them would be : 
 
@@ -98,7 +98,7 @@ The complete code to initialize the objects, get the results of the first respon
 > 
 > import mbr_plots as mbrpl #Import module with plot function
 > 
-> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Import all the objects and structure of the typeForm
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Initialize all the objects and structure of the typeForm
 > 
 > myfig = mbrpl.plots_mbr_tf() #Initialize the plotting environment
 > 
@@ -120,6 +120,7 @@ Pie charts, "camemberts", work with any type of single choice questions :
 Use the function myfig.plot_mbr_barchart(qtitle = question_title, list_labels = question_lables, list_dfs = question_responses) for :
 
 - Multiple choices, with multiple choice enabled
+- Image choice (with multiple selection enabled)
 - Opinion scale
 - Ratings
 
@@ -143,9 +144,10 @@ Take care
 - __xOpportuniteGP.ipynb :__ a sandbox file where I practised cross-result analysis
 - __./config/graph_params.json :__ parameters for plots, like colors, pie explode, title size, etc.
 - __./Documentation/ :__ has printscreens of my form, to illustrate how it looked
-- __./forms/ :__ I don't know why, but I like having a json file where I drop the structure of my forms. Maybe so I can work offline easy. So this is the folder where the structure is always dumps
+- __./forms/ :__ I don't know why, but I like having a json file where I drop the structure of my forms. Maybe so I can work offline easy. So this is the folder where the structure is always dumped
 - __./responses/ :__ is where you put the .csv file associated to the responses you had.
 
+---------------------------------------------------------------------------------------------------------
 # FRANCAIS
 
 * [Introduction](#introduction-1)
@@ -160,9 +162,9 @@ Take care
 ## Introduction
 J'ai essayé de faire un code assez simple à utiliser pour produire des graphs à partir des réponses à vos TypeForm.
 
-L'objectif était d'éviter d'avoir à retravailler mes graphs dans Google Spreadsheet à chaque fois que je réccupérais mes résultats. Une fois mon Jupyter Notebook réalisé, il me suffit de remplacer le fichier de réponses par celui plus à jour pour que mes graphs se mettent tous à jour.
+L'objectif était d'éviter d'avoir à retravailler mes graphs dans Google Spreadsheet à chaque fois que je réccupérais mes résultats. Une fois mon Jupyter Notebook réalisé, il me suffit de remplacer le fichier de réponses par celui plus à jour pour que mes graphs se mettent tous à jour. Puis je sais que ce code est réutilisable pour tous mes futurs questionnaires.
 
-Et puis, j'aime bien le format Jupyter Notebook parce qu'il mélange code, graphs, textes enrichis, et permet donc de ne travailler que sur un seul fichier, sans avoir à formaliser une note à côté du code, ou des slides. Cela permet une plus grande transparence sur l'étude.
+Par ailleurs, j'aime bien le format Jupyter Notebook parce qu'il mélange code, graphs, textes enrichis, et permet donc de ne travailler que sur un seul fichier, sans avoir à formaliser une note à côté du code, ou des slides. Cela permet une plus grande transparence sur l'étude avec moins de travail.
 
 Enfin, j'essaie de me dégoogliser un peu. Si vous utilisez ce code, vous pourrez dire que vous soutenez les initiatives Open Source ! xD
 
@@ -174,7 +176,7 @@ Enfin, j'essaie de me dégoogliser un peu. Si vous utilisez ce code, vous pourre
 
 ### Définissez votre environnement de travail
 - Télécharger tous les fichiers de Github. Vous n'avez réellement besoin que des .py, mais les .ipynb peuvent vous servir d'exemples pour utiliser les différentes fonctions définis dans les .py.
-- Dans ce dossier créer donc votre propre Jupyter NoteBook (fichier .ipynb). Personnellement j'utilise [Visual Studio Code](https://code.visualstudio.com/) et j'adore ça. Et, j'ai appris le python dans Jupyter en partant du cours Open classroom référencé dans [mon autre Repo](https://github.com/MaximoRose/JupyterNoteBook_OpenCR_Python)
+- Dans ce dossier, créez donc votre propre Jupyter NoteBook (fichier .ipynb). Personnellement j'utilise [Visual Studio Code](https://code.visualstudio.com/) et j'adore ça. Et, j'ai appris le python dans Jupyter en partant du cours Open classroom référencé dans [mon autre Repo](https://github.com/MaximoRose/JupyterNoteBook_OpenCR_Python)
 - Depuis votre interface d'administration TypeForm récupérez les réponses à votre questionnaire [exemple](https://maximorose.eu/Ressources/Screenshot%20from%202021-05-11%2019-59-17.png)
 - Mettez le fichier .csv dans le dossier ./responses/
 - Et renommez-le res_{TypeFormid}.csv
@@ -208,7 +210,7 @@ Quand vous accédez à l'API de votre TypeForm dans FireFox (ou au fichier .json
 ![typeform API structure](https://maximorose.eu/Ressources/tf_grpidx_qid.png)
 
 - Le premier index sous "field", le "0" entouré en rouge, correspond à l'index du premier groupe de question.
-- Les ids encerclé en vert correspondent aux id des question. Le premier est l'ID de la première question du groupe 0, le second est l'ID de la seconde question du groupe 0.
+- Les ids encerclés en vert correspondent aux id des questions. Le premier est l'ID de la première question du groupe 0, le second est l'ID de la seconde question du groupe 0.
 - Le "type", souligné en bleu, vous servira à choisir les fonctions à utiliser pour afficher vos résultats.
 
 Sur la base de l'image ci-dessus, si je voulais récupérer le texte de la première question, toutes ses options possibles ainsi que toutes les réponses associées à cette question, j'utiliserais la fonction "get_results(gidx={group index},qid={question id})" à la suite du code précédent :
@@ -226,13 +228,13 @@ Maintenant si vous voulez obtenir un camembert affichant les résultats de la pr
 
 Le code complet pour charger les données et tracer les résultats serait donc: 
 
-> import mbr_typeform as mbrtf #Import module with all the typeform functions
+> import mbr_typeform as mbrtf #Importer le module avec les fonctions typeforme
 > 
-> import mbr_plots as mbrpl #Import module with plot function
+> import mbr_plots as mbrpl #Importer le module de graph
 > 
-> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Import all the objects and structure of the typeForm
+> tfs = mbrtf.mbr_typeFrom(formid='YvBfAdHB') #Initialiser les objets TypeForm
 > 
-> myfig = mbrpl.plots_mbr_tf() #Initialize the plotting environment
+> myfig = mbrpl.plots_mbr_tf() #Initialiser l'environnement graphique
 > 
 > firstquestion_title, firstquestion_labels, firstquestion_responses = tfs.get_results(gidx=0,qid='oYqnhtesJuF5')
 > 
@@ -247,12 +249,13 @@ Les camemberts sont idéals pour les questions de type :
 
 - Yes/No (Oui/Non)
 - Dropdown (Menu déroulant)
-- Multiple choice (feux choix multiples - TypeForm propose de créer des questions de type "multiple choice", mais où on ne peut saisir qu'une réponse. Ce sont donc des "single choice", mais qui s'affichent simplement différement dans le formulaire)
+- Multiple choice (choix multiples - TypeForm propose de créer des questions de type "multiple choice", mais où on ne peut saisir qu'une réponse. Ce sont donc des "single choice", mais qui s'affichent simplement différement dans le formulaire)
 - Image choice (choix d'image non multiples)
 
 Pour les types suivants, privilégiez l'utilisation de graphiques en barres, via la fonction "myfig.plot_mbr_barchart(qtitle = question_title, list_labels = question_lables, list_dfs = question_responses)" :
 
 - Multiple choices, with multiple choice enabled (vrais choix multiples)
+- Image choice (choix d'image non multiples)
 - Opinion scale (Opinions)
 - Ratings (notes)
 
