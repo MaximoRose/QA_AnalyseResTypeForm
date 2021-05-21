@@ -280,46 +280,6 @@ class plots_mbr_tf :
         return
 
 
-    #     # Les camemberts servent a representer tous les resultats de Single Choice
-    # def plot_mbr_heatmap(self, qtitle = '', xlist_labels = [], ylist_labels = [], list_sub_dtfs = [], fresh_lbls = []) :
-    #     if (len(ylist_labels) ==  len(list_sub_dtfs)) :
-    #         nb_responses = 0
-    #         clean_labels = []
-
-    #         heatmap_img = []
-
-    #         # Delete unnecessary labels (if DTF is None)
-    #         for i in range(len(ylist_labels)) :
-    #             clean_values = []
-    #             for j in range(len(list_sub_dtfs[i])) :
-    #                 nbvote = list_sub_dtfs[i][j].shape[0]
-    #                 clean_values.append(nbvote)
-                
-    #             if len(clean_values) > 0 :
-    #                 if len(clean_values) != len(xlist_labels) :
-    #                     print('Les elements de la liste des subdtf devrait avoir la taille de la liste des ylabels')
-    #                     return
-    #             else :
-    #                 print('Les elements de la liste des subdtf devrait avoir la taille de la liste des ylabels')
-
-    #             #heatmap_img.append(clean_values)
-
-    #         # show plot
-    #         fig = plt.figure(figsize =(15, 8))
-    #         plt.imshow(heatmap_img)
-
-    #         plt.xticks(ticks=np.arange(len(xlist_labels)), labels = xlist_labels, rotation=90)
-
-    #         plt.yticks(ticks=np.arange(len(ylist_labels)), labels = ylist_labels)
-
-    #         plt.show()
-
-
-    #     else :
-    #         print("La liste des labels de l'abscisses n'a pas autant d'elements que la liste des dtfs")
-
-
-    #     return
     def plot_mbr_multiple_bars(self, qtitle = '', legends = [], xlist_labels = [], list_sub_dtfs = [], bar_indxs = []) :
         x_labels = xlist_labels
 

@@ -236,6 +236,9 @@ class mbr_typeFrom :
     # Retourne le dataframe des repondant pour une question donnee et une reponse attendue
     def get_sub_question_data(self, gidx=-1, qid='', inputdtf = None) :
         qidx_ing = 0
+        qtitle = ''
+        qoptions =[]
+        qvalues =[]
         if qid == '' :
             print('Please give question id.')
             return
