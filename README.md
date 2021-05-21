@@ -4,6 +4,16 @@
 # Table of contents / Table des matières
 ----------------------------------------------------------------------
 * [ENGLISH](#english)
+
+
+----------------------------------------------------------------------
+
+* [FRANCAIS](#francais)
+
+----------------------------------------------------------------------
+
+# ENGLISH
+
 * [Introduction](#introduction)
 * [How to use it ?](#how-to-use-it-)
   * [Create a TypeForm with the right structure](#create-a-typeform-with-the-proper-structure)
@@ -13,21 +23,6 @@
   * [WIP : get cross results between questions](#get-cross-results-between-questions)
 * [Files and folders](#files-and-folders)
 
-----------------------------------------------------------------------
-
-* [FRANCAIS](#francais)
-* [Introduction](#introduction-1)
-* [Comment l'utiliser ?](#comment-lutiliser-)
-  * [Créer votre TypeForm avec une structure appropriée](#cr%C3%A9er-votre-typeform-avec-une-structure-appropri%C3%A9e)
-  * [Définissez votre environnement de travail](#d%C3%A9finissez-votre-environnement-de-travail)
-  * [Identifier les groupes et les identifiants des questions](#identifier-les-groupes-et-les-identifiants-des-questions)
-  * [Utilisez les bonnes fonctions pour les bons types de questions](#utilisez-les-bonnes-fonctions-pour-les-bons-types-de-questions)
-  * [WIP : Croiser des réponses](#croiser-des-r%C3%A9ponses)
-* [Les fichiers et dossiers](#les-fichiers-et-dossiers)
-
-----------------------------------------------------------------------
-
-# ENGLISH
 ## Introduction
 I've made a code pretty easy to use in Jupyter NoteBook to produce plots for your TypeForm responses.
 
@@ -152,6 +147,16 @@ Take care
 - __./responses/ :__ is where you put the .csv file associated to the responses you had.
 
 # FRANCAIS
+
+* [Introduction](#introduction-1)
+* [Comment l'utiliser ?](#comment-lutiliser-)
+  * [Créer votre TypeForm avec une structure appropriée](#cr%C3%A9er-votre-typeform-avec-une-structure-appropri%C3%A9e)
+  * [Définissez votre environnement de travail](#d%C3%A9finissez-votre-environnement-de-travail)
+  * [Identifier les groupes et les identifiants des questions](#identifier-les-groupes-et-les-identifiants-des-questions)
+  * [Utilisez les bonnes fonctions pour les bons types de questions](#utilisez-les-bonnes-fonctions-pour-les-bons-types-de-questions)
+  * [WIP : Croiser des réponses](#croiser-des-r%C3%A9ponses)
+* [Les fichiers et dossiers](#les-fichiers-et-dossiers)
+
 ## Introduction
 J'ai essayé de faire un code assez simple à utiliser pour produire des graphs à partir des réponses à vos TypeForm.
 
